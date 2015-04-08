@@ -57,13 +57,35 @@
         <response name="success" type="view" value="systemproperties"/>
     </request-map>
     
+    <!-- Shipment Gateway Config --> 
+    <request-map uri="FindShipmentGatewayConfig">
+        <security https="true" auth="true"/>
+        <response name="success" type="view" value="FindShipmentGatewayConfig"/>
+    </request-map>
+    <request-map uri="EditShipmentGatewayConfig">
+        <security https="true" auth="true"/>
+        <response name="success" type="view" value="EditShipmentGatewayConfig"/>
+    </request-map>
+    <request-map uri="UpdateShipmentGatewayConfig">
+        <security https="true" auth="true"/>
+        <event type="service" invoke="updateShipmentGatewayConfigBpost"/>
+        <response name="success" type="view" value="EditShipmentGatewayConfig"/>
+        <response name="error" type="view" value="EditShipmentGatewayConfig"/>
+    </request-map>
+    
     <!-- View Mappings -->
     <view-map name="main" type="screen" page="component://bpost/widget/bpost-Screens.xml#main"/>
     
     <!-- Configuration -->
-    <view-map name="configuration" type="screen" page="component://fedex/widget/ConfigurationScreens.xml#Configuration"/>
-    <view-map name="systemproperties" type="screen" page="component://fedex/widget/ConfigurationScreens.xml#SystemProperties"/>
-    <view-map name="newsystemproperty" type="screen" page="component://fedex/widget/ConfigurationScreens.xml#NewSystemProperty"/>
-    <view-map name="editsystemproperty" type="screen" page="component://fedex/widget/ConfigurationScreens.xml#EditSystemProperty"/>
+    <view-map name="configuration" type="screen" page="component://bpost/widget/ConfigurationScreens.xml#Configuration"/>
+    <view-map name="systemproperties" type="screen" page="component://bpost/widget/ConfigurationScreens.xml#SystemProperties"/>
+    <view-map name="newsystemproperty" type="screen" page="component://bpost/widget/ConfigurationScreens.xml#NewSystemProperty"/>
+    <view-map name="editsystemproperty" type="screen" page="component://bpost/widget/ConfigurationScreens.xml#EditSystemProperty"/>
+    
+    <!-- Shipment Gateway Config -->
+    <view-map name="FindShipmentGatewayConfig" page="component://bpost//widget/ShipmentGatewayConfigScreens.xml#FindShipmentGatewayConfig" type="screen"/>
+    <view-map name="EditShipmentGatewayConfig" page="component://bpost//widget/ShipmentGatewayConfigScreens.xml#EditShipmentGatewayConfig" type="screen"/>
+    <view-map name="FindShipmentGatewayConfigTypes" page="component://bpost//widget/ShipmentGatewayConfigScreens.xml#FindShipmentGatewayConfigTypes" type="screen"/>
+    <view-map name="EditShipmentGatewayConfigType" page="component://bpost//widget/ShipmentGatewayConfigScreens.xml#EditShipmentGatewayConfigType" type="screen"/>
     
 </site-conf>
