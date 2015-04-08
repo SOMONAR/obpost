@@ -28,7 +28,6 @@
     <Party partyId="bpost" partyTypeId="PARTY_GROUP"/>
     <PartyGroup partyId="bpost" groupName="BPost"/>
     <PartyRole partyId="bpost" roleTypeId="CARRIER" fromDate="2001-01-01 00:00:00.0"/>
-    <PartyRole partyId="bpost" roleTypeId="CARRIER" fromDate="2001-01-01 00:00:00.0"/>
     <PartyRole partyId="bpost" roleTypeId="SUPPLIER" fromDate="2001-01-01 00:00:00.0"/>
     <PartyRole partyId="bpost" roleTypeId="VENDOR" fromDate="2001-01-01 00:00:00.0"/>
     <PartyRole partyId="bpost" roleTypeId="BILL_FROM_VENDOR" fromDate="2001-01-01 00:00:00.0"/>
