@@ -40,5 +40,7 @@
         server="default-server"
         location="webapp/bpost"
         base-permission="OFBTOOLS,bpost"
-        mount-point="/bpost"/>
+        mount-point="/bpost"
+        menu-name="secondary"
+        />
 </ofbiz-component>
