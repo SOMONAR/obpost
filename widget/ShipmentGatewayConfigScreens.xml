@@ -23,19 +23,17 @@ under the License.
 
     <screen name="EditShipmentGatewayConfig">
         <section>
-            <actions>
-                <set field="titleProperty" value="Configuration"/>
-                <set field="tabButtonItem" value="gatewayConfiguration"/> 
-                
-                <set field="shipmentGatewayConfigId" from-field="activeApp"/>
-                <entity-one entity-name="ShipmentGatewayDhl" value-field="shipmentGatewayDhl">
-                    <field-map field-name="shipmentGatewayConfigId" from-field="parameters.shipmentGatewayConfigId"/>
-                </entity-one>
-            </actions>
             <widgets>
                 <decorator-screen name="CommonConfigurationDecorator" location="${parameters.mainDecoratorLocation}">
                     <decorator-section name="body">
                         <section>
+                            <actions>
+                                <set field="titleProperty" value="Configuration"/>
+                                <set field="tabButtonItem" value="gatewayConfiguration"/>
+                                <entity-one entity-name="ShipmentGatewayBpost" value-field="shipmentGateway">
+                                    <field-map field-name="shipmentGatewayConfigId" value="${activeApp}"/>
+                                </entity-one>
+                            </actions>
                             <widgets>
                                 <screenlet title="${uiLabelMap.Configuration} ${uiLabelMap.CommonOf} ${activeApp}">
                                     <include-form name="EditShipmentGatewayConfig" location="component://${activeApp}//widget/forms/ShipmentGatewayConfigForms.xml"/>

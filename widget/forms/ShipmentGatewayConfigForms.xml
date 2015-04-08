@@ -20,8 +20,8 @@ under the License.
 <forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://ofbiz.apache.org/dtds/widget-form.xsd">
     
     
-    <form name="EditShipmentGatewayConfig" type="single" target="UpdateShipmentGatewayConfig" default-map-name="shipmentGatewayDhl" header-row-style="header-row" default-table-style="basic-table">
-        <auto-fields-entity entity-name="ShipmentGatewayDhl" default-field-type="edit"/>
+    <form name="EditShipmentGatewayConfig" type="single" target="UpdateShipmentGatewayConfig" default-map-name="shipmentGateway" header-row-style="header-row" default-table-style="basic-table">
+        <auto-fields-entity entity-name="ShipmentGatewayBpost" default-field-type="edit"/>
         <field name="shipmentGatewayConfigId"><hidden/></field>
         <field name="dummy99" title=" "><display/></field>
         <field name="submitButton" title="${uiLabelMap.CommonUpdate}" widget-style="smallSubmit">
