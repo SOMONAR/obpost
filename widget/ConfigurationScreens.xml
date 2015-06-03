@@ -94,9 +94,6 @@
     
     <screen name="EditSystemProperty">
         <section>
-            <condition>
-                <if-has-permission permission="${activeApp}" action="_ADMIN"/>
-            </condition>
             <widgets>
                 <decorator-screen name="CommonConfigurationDecorator" location="${parameters.mainDecoratorLocation}">
                     <decorator-section name="body">
@@ -112,13 +109,13 @@
                                     <include-form location="component://${activeApp}/widget/forms/ConfigurationForms.xml" name="EditSystemProperty"/>
                                 </screenlet>
                             </widgets>
+                            <fail-widgets>
+                                <label style="h3">${uiLabelMap.${activeApp}ViewPermissionError}</label>
+                            </fail-widgets>
                         </section>
                     </decorator-section>
                 </decorator-screen>
             </widgets>
-            <fail-widgets>
-                <label style="h3">${uiLabelMap.${activeApp}ViewPermissionError}</label>
-            </fail-widgets>
         </section>
     </screen>
     

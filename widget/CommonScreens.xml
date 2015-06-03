@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-
     Licensed to the Apache Software Foundation (ASF) under one
     or more contributor license agreements.  See the NOTICE file
     distributed with this work for additional information
@@ -21,7 +20,6 @@
 
 <screens xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:noNamespaceSchemaLocation="http://ofbiz.apache.org/dtds/widget-screen.xsd">
-
     <screen name="main-decorator">
         <section>
             <actions>
@@ -33,8 +31,8 @@
                 <set field="layoutSettings.companyName" from-field="uiLabelMap.${activeApp}CompanyName" global="true"/>
                 <set field="layoutSettings.companySubtitle" from-field="uiLabelMap.${activeApp}CompanySubtitle" global="true"/>
                 
-                <set field="layoutSettings.javaScripts[]" value="/${activeApp}/images/${activeApp}.js" global="true"/>
-                <set field="layoutSettings.styleSheets[]" value="/${activeApp}//images/${activeApp}.css" global="true"/>
+                <set field="layoutSettings.javaScripts[]" value="/${activeApp}/js/${activeApp}.js" global="true"/>
+                <set field="layoutSettings.styleSheets[]" value="/${activeApp}/css/${activeApp}.css" global="true"/>
                 
                 <set field="applicationMenuName" value="MainAppBar" global="true"/>
                 <set field="applicationMenuLocation" value="component://${activeApp}/widget/${activeApp}-Menus.xml" global="true"/>
