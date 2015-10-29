@@ -26,8 +26,8 @@
 
     <property environment="env"/>
     <property name="desc" value="BPost Integration Component"/>
-    <property name="name" value="bpost"/>
-    <property name="component-name" value="bpost"/>
+    <property name="name" value="obpost"/>
+    <property name="component-name" value="obpost"/>
     <property name="ofbiz.home.dir" value="../.."/>
     <property name="src.dir" value="src"/>
     <property name="dtd.dir" value="dtd"/>

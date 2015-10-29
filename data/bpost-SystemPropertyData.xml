@@ -20,8 +20,8 @@
 
     <SystemProperty
     description="BPost shipment active" 
-    systemPropertyId="shipment.bpost.active" 
+    systemPropertyId="shipment.obpost.active" 
     systemPropertyValue="nl" 
-    systemResourceId="bpost"/>
+    systemResourceId="obpost"/>
     
 </entity-engine-xml>

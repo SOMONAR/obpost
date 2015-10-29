@@ -17,12 +17,12 @@
  -->
 
 <entity-engine-xml>
-    <SecurityPermission description="View operations in the BPost Integration Component." permissionId="bpost_VIEW"/>
-    <SecurityPermission description="Create operations in the BPost Integration Component." permissionId="bpost_CREATE"/>
-    <SecurityPermission description="Update operations in the BPost Integration Component." permissionId="bpost_UPDATE"/>
-    <SecurityPermission description="Delete operations in the BPost Integration Component." permissionId="bpost_DELETE"/>
-    <SecurityPermission description="ALL operations in the BPost Integration Component." permissionId="bpost_ADMIN"/>
+    <SecurityPermission description="View operations in the BPost Integration Component." permissionId="obpost_VIEW"/>
+    <SecurityPermission description="Create operations in the BPost Integration Component." permissionId="obpost_CREATE"/>
+    <SecurityPermission description="Update operations in the BPost Integration Component." permissionId="obpost_UPDATE"/>
+    <SecurityPermission description="Delete operations in the BPost Integration Component." permissionId="obpost_DELETE"/>
+    <SecurityPermission description="ALL operations in the BPost Integration Component." permissionId="obpost_ADMIN"/>
 
-    <SecurityGroupPermission groupId="SUPER" permissionId="bpost_ADMIN"/>
+    <SecurityGroupPermission groupId="SUPER" permissionId="obpost_ADMIN"/>
 
 </entity-engine-xml>

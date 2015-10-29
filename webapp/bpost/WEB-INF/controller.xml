@@ -91,18 +91,18 @@
     </request-map>
     
     <!-- View Mappings -->
-    <view-map name="main" type="screen" page="component://bpost/widget/bpost-Screens.xml#main"/>
+    <view-map name="main" type="screen" page="component://obpost/widget/obpost-Screens.xml#main"/>
     
     <!-- Configuration -->
-    <view-map name="configuration" type="screen" page="component://bpost/widget/ConfigurationScreens.xml#Configuration"/>
-    <view-map name="systemproperties" type="screen" page="component://bpost/widget/ConfigurationScreens.xml#SystemProperties"/>
-    <view-map name="newsystemproperty" type="screen" page="component://bpost/widget/ConfigurationScreens.xml#NewSystemProperty"/>
-    <view-map name="editsystemproperty" type="screen" page="component://bpost/widget/ConfigurationScreens.xml#EditSystemProperty"/>
+    <view-map name="configuration" type="screen" page="component://obpost/widget/ConfigurationScreens.xml#Configuration"/>
+    <view-map name="systemproperties" type="screen" page="component://obpost/widget/ConfigurationScreens.xml#SystemProperties"/>
+    <view-map name="newsystemproperty" type="screen" page="component://obpost/widget/ConfigurationScreens.xml#NewSystemProperty"/>
+    <view-map name="editsystemproperty" type="screen" page="component://obpost/widget/ConfigurationScreens.xml#EditSystemProperty"/>
     
     <!-- Shipment Gateway Config -->
-    <view-map name="FindShipmentGatewayConfig" page="component://bpost//widget/ShipmentGatewayConfigScreens.xml#FindShipmentGatewayConfig" type="screen"/>
-    <view-map name="EditShipmentGatewayConfig" page="component://bpost//widget/ShipmentGatewayConfigScreens.xml#EditShipmentGatewayConfig" type="screen"/>
-    <view-map name="FindShipmentGatewayConfigTypes" page="component://bpost//widget/ShipmentGatewayConfigScreens.xml#FindShipmentGatewayConfigTypes" type="screen"/>
-    <view-map name="EditShipmentGatewayConfigType" page="component://bpost//widget/ShipmentGatewayConfigScreens.xml#EditShipmentGatewayConfigType" type="screen"/>
+    <view-map name="FindShipmentGatewayConfig" page="component://obpost//widget/ShipmentGatewayConfigScreens.xml#FindShipmentGatewayConfig" type="screen"/>
+    <view-map name="EditShipmentGatewayConfig" page="component://obpost//widget/ShipmentGatewayConfigScreens.xml#EditShipmentGatewayConfig" type="screen"/>
+    <view-map name="FindShipmentGatewayConfigTypes" page="component://obpost//widget/ShipmentGatewayConfigScreens.xml#FindShipmentGatewayConfigTypes" type="screen"/>
+    <view-map name="EditShipmentGatewayConfigType" page="component://obpost//widget/ShipmentGatewayConfigScreens.xml#EditShipmentGatewayConfigType" type="screen"/>
     
 </site-conf>

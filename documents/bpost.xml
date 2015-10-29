@@ -22,12 +22,12 @@
     xsi:schemaLocation="http://docbook.org/ns/docbook ../../../applications/content/dtd/docbook.xsd"
     xmlns="http://docbook.org/ns/docbook">
     
-    <title><anchor xml:id="bpost"/>The BPost Integration Component</title>
+    <title><anchor xml:id="obpost"/>The BPost Integration Component</title>
     <section>
         <title>Introduction</title>
         <para>
         </para>
     </section>
-        <xi:include href="../data/helpdata/HELP_bpost.xml" />
+        <xi:include href="../data/helpdata/HELP_obpost.xml" />
     
 </chapter>

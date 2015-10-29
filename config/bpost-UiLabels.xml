@@ -17,16 +17,16 @@
  -->
 
 <resource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://ofbiz.apache.org/dtds/ofbiz-properties.xsd">
-    <property key="bpostApplication">
+    <property key="obpostApplication">
         <value xml:lang="en">BPost Integration</value>
     </property>
-    <property key="bpostCompanyName">
+    <property key="obpostCompanyName">
         <value xml:lang="en">BPost Integration</value>
     </property>
-    <property key="bpostCompanySubtitle">
+    <property key="obpostCompanySubtitle">
         <value xml:lang="en">An Apache OFBiz(tm) Component</value>
     </property>
-    <property key="bpostViewPermissionError">
+    <property key="obpostViewPermissionError">
         <value xml:lang="en">You are not allowed to view this page.</value>
     </property>
 </resource>

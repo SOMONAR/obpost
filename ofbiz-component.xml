@@ -16,7 +16,7 @@
 
  -->
 
-<ofbiz-component name="bpost"
+<ofbiz-component name="obpost"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:noNamespaceSchemaLocation="http://ofbiz.apache.org/dtds/ofbiz-component.xsd">
     <!-- define resource loaders; most common is to use the component resource loader -->
@@ -33,13 +33,13 @@
     <!-- entity resources: model(s), eca(s), group, and data definitions -->
     <entity-resource type="model" reader-name="main" loader="main" location="entitydef/entitymodel.xml"/>
     <!-- <entity-resource type="eca" reader-name="main" loader="main" location="entitydef/eecas.xml"/> -->
-    <entity-resource type="data" reader-name="seed" loader="main" location="data/bpost-TypeData.xml"/>
-    <entity-resource type="data" reader-name="seed" loader="main" location="data/bpost-SecurityPermissionSeedData.xml"/>
+    <entity-resource type="data" reader-name="seed" loader="main" location="data/obpost-TypeData.xml"/>
+    <entity-resource type="data" reader-name="seed" loader="main" location="data/obpost-SecurityPermissionSeedData.xml"/>
     
-    <entity-resource type="data" reader-name="seed-initial" loader="main" location="data/bpost-SystemPropertyData.xml"/>
+    <entity-resource type="data" reader-name="seed-initial" loader="main" location="data/obpost-SystemPropertyData.xml"/>
     
-    <entity-resource type="data" reader-name="demo" loader="main" location="data/bpost-SecurityGroupDemoData.xml"/>
-    <entity-resource type="data" reader-name="demo" loader="main" location="data/bpost-DemoData.xml"/>
+    <entity-resource type="data" reader-name="demo" loader="main" location="data/obpost-SecurityGroupDemoData.xml"/>
+    <entity-resource type="data" reader-name="demo" loader="main" location="data/obpost-DemoData.xml"/>
 
     <!-- service resources: model(s), eca(s) and group definitions -->
     <service-resource type="model" loader="main" location="servicedef/services.xml"/>
@@ -49,15 +49,15 @@
     <service-resource type="group" loader="main" location="servicedef/groups.xml"/>
     -->
 
-    <test-suite loader="main" location="testdef/bpost-Tests.xml"/>
+    <test-suite loader="main" location="testdef/obpost-Tests.xml"/>
 
     <!-- web applications; will be mounted when using the embedded container -->
-    <webapp name="bpost"
+    <webapp name="obpost"
         title="BPost Integration"
         server="default-server"
-        location="webapp/bpost"
-        base-permission="OFBTOOLS,bpost"
-        mount-point="/bpost"
+        location="webapp/obpost"
+        base-permission="OFBTOOLS,obpost"
+        mount-point="/obpost"
         menu-name="3rdParty"
         />
 </ofbiz-component>

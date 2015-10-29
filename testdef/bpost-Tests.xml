@@ -16,7 +16,7 @@
 
  -->
 
-<test-suite suite-name="bpost-tests"
+<test-suite suite-name="obpost-tests"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:noNamespaceSchemaLocation="http://ofbiz.apache.org/dtds/test-suite.xsd">
 

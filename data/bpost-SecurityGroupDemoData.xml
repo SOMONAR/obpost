@@ -17,5 +17,5 @@
  -->
  
 <entity-engine-xml>
-    <SecurityGroupPermission groupId="FULLADMIN" permissionId="bpost_ADMIN"/>
+    <SecurityGroupPermission groupId="FULLADMIN" permissionId="obpost_ADMIN"/>
 </entity-engine-xml>
