@@ -17,11 +17,75 @@
  -->
 
 <entity-engine-xml>
-
+    
     <SystemProperty
-    description="BPost shipment active" 
-    systemPropertyId="shipment.obpost.active" 
-    systemPropertyValue="nl" 
-    systemResourceId="obpost"/>
+    systemResourceId="obpost"
+    systemPropertyId="HostName" 
+    systemPropertyValue="shippingmanager.bpost.be" 
+    description="BPost API HostName" 
+    />
+    
+    <SystemProperty
+    systemResourceId="obpost"
+    systemPropertyId="HostPort" 
+    systemPropertyValue="443" 
+    description="BPost API HostPort" 
+    />
+    
+    <SystemProperty
+    systemResourceId="obpost"
+    systemPropertyId="HostProtocol" 
+    systemPropertyValue="https" 
+    description="BPost API HostProtocol" 
+    />
+    
+    <SystemProperty
+    systemResourceId="obpost"
+    systemPropertyId="apiRequest" 
+    systemPropertyValue="/ShmFrontEnd/start" 
+    description="BPost API Request" 
+    />
+    
+    <SystemProperty
+    systemResourceId="obpost"
+    systemPropertyId="accountId" 
+    systemPropertyValue="123456" 
+    description="BPost API Account Id" 
+    />
+    
+    <SystemProperty
+    systemResourceId="obpost"
+    systemPropertyId="phassPhrase" 
+    systemPropertyValue="myPassPhrase" 
+    description="BPost API Account Id" 
+    />
+    
+    <SystemProperty
+    systemResourceId="obpost"
+    systemPropertyId="defaultCancelUrl" 
+    systemPropertyValue="obpost-cancel" 
+    description="BPost default cancel url" 
+    />
+    
+    <SystemProperty
+    systemResourceId="obpost"
+    systemPropertyId="defaultConfirmUrl" 
+    systemPropertyValue="obpost-confirm" 
+    description="BPost default confirm url" 
+    />
+    
+    <SystemProperty
+    systemResourceId="obpost"
+    systemPropertyId="defaultErrorUrl" 
+    systemPropertyValue="obpost-error" 
+    description="BPost default error url" 
+    />
+    
+    <SystemProperty
+    systemResourceId="obpost"
+    systemPropertyId="action" 
+    systemPropertyValue="START" 
+    description="BPost actions: START opens the redirect page, CONFIRM confirms the order" 
+    />
     
 </entity-engine-xml>
