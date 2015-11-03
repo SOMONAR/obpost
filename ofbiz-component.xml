@@ -35,14 +35,14 @@
     <!-- <entity-resource type="eca" reader-name="main" loader="main" location="entitydef/eecas.xml"/> -->
     <entity-resource type="data" reader-name="seed" loader="main" location="data/obpost-SeedData.xml"/>
     <entity-resource type="data" reader-name="seed" loader="main" location="data/obpost-SecurityPermissionSeedData.xml"/>
-    
-    <entity-resource type="data" reader-name="seed-initial" loader="main" location="data/obpost-SystemPropertyData.xml"/>
+    <entity-resource type="data" reader-name="seed" loader="main" location="data/obpost-SystemPropertyData.xml"/>
     
     <entity-resource type="data" reader-name="demo" loader="main" location="data/obpost-SecurityGroupDemoData.xml"/>
     <entity-resource type="data" reader-name="demo" loader="main" location="data/obpost-DemoData.xml"/>
 
     <!-- service resources: model(s), eca(s) and group definitions -->
     <service-resource type="model" loader="main" location="servicedef/services.xml"/>
+    <service-resource type="model" loader="main" location="servicedef/services-carrier.xml"/>
     <service-resource type="model" loader="main" location="servicedef/ConfigurationServices.xml"/>
     <!--
     <service-resource type="eca" loader="main" location="servicedef/secas.xml"/>
