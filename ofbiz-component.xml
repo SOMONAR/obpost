@@ -33,7 +33,7 @@
     <!-- entity resources: model(s), eca(s), group, and data definitions -->
     <entity-resource type="model" reader-name="main" loader="main" location="entitydef/entitymodel.xml"/>
     <!-- <entity-resource type="eca" reader-name="main" loader="main" location="entitydef/eecas.xml"/> -->
-    <entity-resource type="data" reader-name="seed" loader="main" location="data/obpost-TypeData.xml"/>
+    <entity-resource type="data" reader-name="seed" loader="main" location="data/obpost-SeedData.xml"/>
     <entity-resource type="data" reader-name="seed" loader="main" location="data/obpost-SecurityPermissionSeedData.xml"/>
     
     <entity-resource type="data" reader-name="seed-initial" loader="main" location="data/obpost-SystemPropertyData.xml"/>
@@ -58,6 +58,6 @@
         location="webapp/obpost"
         base-permission="OFBTOOLS,obpost"
         mount-point="/obpost"
-        menu-name="3rdParty"
+        menu-name="secondary"
         />
 </ofbiz-component>
