@@ -41,6 +41,18 @@
     <!-- Request Mappings -->
     <request-map uri="main"><security https="true" auth="true"/><response name="success" type="view" value="main"/></request-map>
     
+    <request-map uri="test">
+        <security https="true" auth="true"/>
+        <response name="success" type="view" value="test"/>
+    </request-map>
+    
+    <request-map uri="testBPost">
+        <security https="true" auth="true"/>
+        <event type="groovy" path="component://obpost/src/com/somonar/orrtiz/shipment/obpost/obposttest.groovy"/>
+        <response name="success" type="view" value="test"/>
+        <response name="error" type="view" value="test"/>
+    </request-map>
+    
     <!-- Configuration -->
     <request-map uri="configuration">
         <security https="true" auth="true"/>
@@ -74,20 +86,36 @@
         <response name="success" type="view" value="systemproperties"/>
     </request-map>
     
-    <!-- Shipment Gateway Config --> 
-    <request-map uri="FindShipmentGatewayConfig">
+    <!-- Carrier Config --> 
+    <request-map uri="carriermethods">
         <security https="true" auth="true"/>
-        <response name="success" type="view" value="FindShipmentGatewayConfig"/>
+        <response name="success" type="view" value="carriermethods"/>
     </request-map>
-    <request-map uri="EditShipmentGatewayConfig">
+    <request-map uri="newcarriermethod">
         <security https="true" auth="true"/>
-        <response name="success" type="view" value="EditShipmentGatewayConfig"/>
+        <response name="success" type="view" value="newcarriermethod"/>
     </request-map>
-    <request-map uri="UpdateShipmentGatewayConfig">
+    <request-map uri="createcarriermethod">
         <security https="true" auth="true"/>
-        <event type="service" invoke="updateShipmentGatewayConfigBpost"/>
-        <response name="success" type="view" value="EditShipmentGatewayConfig"/>
-        <response name="error" type="view" value="EditShipmentGatewayConfig"/>
+        <event type="service" invoke="createCarrierShipmentMethod"/>
+        <response name="success" type="view" value="carriermethods"/>
+        <response name="error" type="view" value="carriermethods"/>
+    </request-map>
+    <request-map uri="editcarriermethod">
+        <security https="true" auth="true"/>
+        <response name="success" type="view" value="editcarriermethod"/>
+    </request-map>
+    <request-map uri="removecarriermethod">
+        <security https="true" auth="true"/>
+        <event type="service" invoke="removeCarrierShipmentMethod"/>
+        <response name="success" type="view" value="carriermethods"/>
+        <response name="error" type="view" value="carriermethods"/>
+    </request-map>
+    <request-map uri="updatecarriermethod">
+        <security https="true" auth="true"/>
+        <event type="service" invoke="updateCarrierShipmentMethod"/>
+        <response name="success" type="view" value="carriermethods"/>
+        <response name="error" type="view" value="carriermethods"/>
     </request-map>
     
     <!-- View Mappings -->
@@ -99,10 +127,12 @@
     <view-map name="newsystemproperty" type="screen" page="component://obpost/widget/ConfigurationScreens.xml#NewSystemProperty"/>
     <view-map name="editsystemproperty" type="screen" page="component://obpost/widget/ConfigurationScreens.xml#EditSystemProperty"/>
     
-    <!-- Shipment Gateway Config -->
-    <view-map name="FindShipmentGatewayConfig" page="component://obpost//widget/ShipmentGatewayConfigScreens.xml#FindShipmentGatewayConfig" type="screen"/>
-    <view-map name="EditShipmentGatewayConfig" page="component://obpost//widget/ShipmentGatewayConfigScreens.xml#EditShipmentGatewayConfig" type="screen"/>
-    <view-map name="FindShipmentGatewayConfigTypes" page="component://obpost//widget/ShipmentGatewayConfigScreens.xml#FindShipmentGatewayConfigTypes" type="screen"/>
-    <view-map name="EditShipmentGatewayConfigType" page="component://obpost//widget/ShipmentGatewayConfigScreens.xml#EditShipmentGatewayConfigType" type="screen"/>
+    <!-- Carrier Config -->
+    <view-map name="carriermethods" page="component://obpost//widget/CarrierScreens.xml#CarrierMethods" type="screen"/>
+    <view-map name="newcarriermethod" page="component://obpost//widget/CarrierScreens.xml#NewCarrierMethod" type="screen"/>
+    <view-map name="editcarriermethod" page="component://obpost//widget/CarrierScreens.xml#EditCarrierMethod" type="screen"/>
+    
+    <view-map name="test" type="screen" page="component://obpost/widget/obpost-Screens.xml#Test"/>
+    <view-map name="testreview" type="screen" page="component://obpost/widget/obpost-Screens.xml#TestReview"/>
     
 </site-conf>
