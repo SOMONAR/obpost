@@ -18,16 +18,52 @@
 
 <entity-engine-xml>
     
-    <Party partyId="obpost" partyTypeId="PARTY_GROUP"/>
-    <PartyGroup partyId="obpost" groupName="BPost"/>
-    <PartyRole partyId="obpost" roleTypeId="CARRIER" fromDate="2001-01-01 00:00:00.000"/>
-    <PartyRole partyId="obpost" roleTypeId="SUPPLIER" fromDate="2001-01-01 00:00:00.000"/>
-    <PartyRole partyId="obpost" roleTypeId="VENDOR" fromDate="2001-01-01 00:00:00.000"/>
-    <PartyRole partyId="obpost" roleTypeId="BILL_FROM_VENDOR" fromDate="2001-01-01 00:00:00.000"/>
-    <PartyRole partyId="obpost" roleTypeId="SHIP_FROM_VENDOR" fromDate="2001-01-01 00:00:00.000"/>
+    <Party partyId="bpost" partyTypeId="PARTY_GROUP"/>
+    <PartyGroup partyId="bpost" groupName="BPost"/>
+    <PartyRole partyId="bpost" roleTypeId="CARRIER" fromDate="2001-01-01 00:00:00.000"/>
+    <PartyRole partyId="bpost" roleTypeId="SUPPLIER" fromDate="2001-01-01 00:00:00.000"/>
+    <PartyRole partyId="bpost" roleTypeId="VENDOR" fromDate="2001-01-01 00:00:00.000"/>
+    <PartyRole partyId="bpost" roleTypeId="BILL_FROM_VENDOR" fromDate="2001-01-01 00:00:00.000"/>
+    <PartyRole partyId="bpost" roleTypeId="SHIP_FROM_VENDOR" fromDate="2001-01-01 00:00:00.000"/>
     
-    <ShipmentGatewayConfigType shipmentGatewayConfTypeId="obpost" hasTable="N" description="BPost Shipment Gateway"/>
-    <ShipmentGatewayConfig shipmentGatewayConfigId="obpost" shipmentGatewayConfTypeId="obpost" description="BPost Config"/>
-   
+    
+    <GeoPoint 
+        geoPointId="bpost"
+        dataSourceId="GEOPT_GOOGLE"
+        latitude="50.8504500"
+        longitude="4.3487800"
+        elevation="91"
+        elevationUomId="LEN_ft"
+        information="Geo coordinates of Brussels (Belgium)"
+    />
+    
+    <ContactMech contactMechId="bpostAddress" contactMechTypeId="POSTAL_ADDRESS"/>
+    <PartyContactMech partyId="bpost" contactMechId="bpostAddress" fromDate="2000-01-01 00:00:00.000" allowSolicitation="Y"/>
+    <PostalAddress contactMechId="bpostAddress" toName="BPost" address1="Centre Monnaie" city="Brussel" postalCode="1000" countryGeoId="BEL" stateProvinceGeoId="_NA_" geoPointId="bpost"/>
+    
+    <ContactMech contactMechId="bpostMail" contactMechTypeId="EMAIL_ADDRESS" infoString="ofbiztest@example.com"/>
+    <PartyContactMech partyId="bpost" contactMechId="bpostMail" fromDate="2000-01-01 00:00:00.000" allowSolicitation="Y"/>
+    <PartyContactMechPurpose contactMechPurposeTypeId="PRIMARY_EMAIL" partyId="bpost" contactMechId="bpostMail" fromDate="2003-01-01 00:00:00.000"/>
+    
+    <ContactMech contactMechId="bpostSupport" contactMechTypeId="EMAIL_ADDRESS" infoString="shippingmanager@bpost.be"/>
+    <PartyContactMech partyId="bpost" contactMechId="bpostSupport" fromDate="2003-01-01 00:00:00.0" allowSolicitation="Y"/>
+    <PartyContactMechPurpose contactMechPurposeTypeId="SUPPORT_EMAIL" partyId="bpost" contactMechId="bpostSupport" fromDate="2003-01-01 00:00:00.0"/>
+    
+    <PartyContactMechPurpose partyId="bpost" contactMechId="bpostAddress" contactMechPurposeTypeId="BILLING_LOCATION" fromDate="2000-01-01 00:00:00.000"/>
+    <PartyContactMechPurpose partyId="bpost" contactMechId="bpostAddress" contactMechPurposeTypeId="GENERAL_LOCATION" fromDate="2000-01-01 00:00:00.000"/>
+    <PartyGeoPoint partyId="bpost" geoPointId="bpost" fromDate="2000-01-01 00:00:00.000"/>
+    
+    <ShipmentMethodType description="BPACK @ Home" shipmentMethodTypeId="bpost_Regular"/>
+    <ShipmentMethodType description="BPACK @ BPost" shipmentMethodTypeId="bpost_Pugo"/>
+    <ShipmentMethodType description="BPACK 24/7" shipmentMethodTypeId="bpost_Depot"/>
+    <ShipmentMethodType description="BPACK World Express" shipmentMethodTypeId="bpost_Express"/>
+    <ShipmentMethodType description="BPACK World Business" shipmentMethodTypeId="bpost_Business"/>
+    
+    <CarrierShipmentMethod partyId="bpost" roleTypeId="CARRIER" shipmentMethodTypeId="bpost_Regular" sequenceNumber="1" carrierServiceCode="Regular"/>
+    <CarrierShipmentMethod partyId="bpost" roleTypeId="CARRIER" shipmentMethodTypeId="bpost_Pugo" sequenceNumber="2" carrierServiceCode="Pugo"/>
+    <CarrierShipmentMethod partyId="bpost" roleTypeId="CARRIER" shipmentMethodTypeId="bpost_Depot" sequenceNumber="3" carrierServiceCode="Parcels Depot"/>
+    <CarrierShipmentMethod partyId="bpost" roleTypeId="CARRIER" shipmentMethodTypeId="bpost_Express" sequenceNumber="4" carrierServiceCode="bpack EXPRESS"/>
+    <CarrierShipmentMethod partyId="bpost" roleTypeId="CARRIER" shipmentMethodTypeId="bpost_Business" sequenceNumber="5" carrierServiceCode="bpack BUSINESS"/>
+    
     
 </entity-engine-xml>

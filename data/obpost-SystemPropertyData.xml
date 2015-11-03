@@ -19,73 +19,80 @@
 <entity-engine-xml>
     
     <SystemProperty
-    systemResourceId="obpost"
     systemPropertyId="HostName" 
     systemPropertyValue="shippingmanager.bpost.be" 
     description="BPost API HostName" 
+    systemResourceId="obpost"
     />
     
     <SystemProperty
-    systemResourceId="obpost"
     systemPropertyId="HostPort" 
     systemPropertyValue="443" 
     description="BPost API HostPort" 
+    systemResourceId="obpost"
     />
     
     <SystemProperty
-    systemResourceId="obpost"
     systemPropertyId="HostProtocol" 
     systemPropertyValue="https" 
     description="BPost API HostProtocol" 
+    systemResourceId="obpost"
     />
     
     <SystemProperty
-    systemResourceId="obpost"
     systemPropertyId="apiRequest" 
     systemPropertyValue="/ShmFrontEnd/start" 
     description="BPost API Request" 
+    systemResourceId="obpost"
     />
     
     <SystemProperty
-    systemResourceId="obpost"
     systemPropertyId="accountId" 
     systemPropertyValue="123456" 
     description="BPost API Account Id" 
+    systemResourceId="obpost"
     />
     
     <SystemProperty
-    systemResourceId="obpost"
     systemPropertyId="phassPhrase" 
-    systemPropertyValue="myPassPhrase" 
+    systemPropertyValue="myPassPhrase"
     description="BPost API Account Id" 
+    systemResourceId="obpost" 
     />
     
     <SystemProperty
-    systemResourceId="obpost"
     systemPropertyId="defaultCancelUrl" 
     systemPropertyValue="obpost-cancel" 
     description="BPost default cancel url" 
+    systemResourceId="obpost"
     />
     
     <SystemProperty
-    systemResourceId="obpost"
     systemPropertyId="defaultConfirmUrl" 
     systemPropertyValue="obpost-confirm" 
     description="BPost default confirm url" 
+    systemResourceId="obpost"
     />
     
     <SystemProperty
-    systemResourceId="obpost"
     systemPropertyId="defaultErrorUrl" 
     systemPropertyValue="obpost-error" 
     description="BPost default error url" 
+    systemResourceId="obpost"
     />
     
     <SystemProperty
-    systemResourceId="obpost"
     systemPropertyId="action" 
     systemPropertyValue="START" 
     description="BPost actions: START opens the redirect page, CONFIRM confirms the order" 
+    systemResourceId="obpost"
+    />
+    
+    <SystemProperty
+    systemPropertyId="partyId" 
+    systemPropertyValue="bpost" 
+    description="Bpost associated carrier (partyId)" 
+    systemResourceId="obpost"
     />
     
 </entity-engine-xml>

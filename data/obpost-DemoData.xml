@@ -18,14 +18,118 @@
 
 <entity-engine-xml>
     <ProductStoreShipmentMeth 
-        productStoreShipMethId="9116" 
-        productStoreId="9100" 
-        partyId="FEDEX" 
+        productStoreShipMethId="bpost_Regular" 
+        productStoreId="9000" 
+        partyId="bpost" 
         includeNoChargeItems="N" 
         allowUspsAddr="N" 
         requireUspsAddr="N" 
         roleTypeId="CARRIER" 
-        shipmentMethodTypeId="GROUND_HOME" 
-        sequenceNumber="17"/>
+        shipmentMethodTypeId="bpost_Regular" 
+        sequenceNumber="1"/>
+    
+    <ProductStoreShipmentMeth 
+        productStoreShipMethId="bpost_Pugo" 
+        productStoreId="9000" 
+        partyId="bpost" 
+        includeNoChargeItems="N" 
+        allowUspsAddr="N" 
+        requireUspsAddr="N" 
+        roleTypeId="CARRIER" 
+        shipmentMethodTypeId="bpost_Pugo" 
+        sequenceNumber="1"/>
+    
+    <ProductStoreShipmentMeth 
+        productStoreShipMethId="bpost_Depot" 
+        productStoreId="9000" 
+        partyId="bpost" 
+        includeNoChargeItems="N" 
+        allowUspsAddr="N" 
+        requireUspsAddr="N" 
+        roleTypeId="CARRIER" 
+        shipmentMethodTypeId="bpost_Depot" 
+        sequenceNumber="1"/>
+    
+    <ProductStoreShipmentMeth 
+        productStoreShipMethId="bpost_Express" 
+        productStoreId="9000" 
+        partyId="bpost" 
+        includeNoChargeItems="N" 
+        allowUspsAddr="N" 
+        requireUspsAddr="N" 
+        roleTypeId="CARRIER" 
+        shipmentMethodTypeId="bpost_Express" 
+        sequenceNumber="1"/>
+    
+    <ProductStoreShipmentMeth 
+        productStoreShipMethId="bpost_Business" 
+        productStoreId="9000" 
+        partyId="bpost" 
+        includeNoChargeItems="N" 
+        allowUspsAddr="N" 
+        requireUspsAddr="N" 
+        roleTypeId="CARRIER" 
+        shipmentMethodTypeId="bpost_Business" 
+        sequenceNumber="1"/>
+    
+    <ShipmentCostEstimate 
+        productStoreShipMethId="bpost_Regular" 
+        carrierPartyId="bpost" 
+        geoIdFrom="BEL" 
+        orderFlatPrice="3.00" 
+        orderPricePercent="0.000000" 
+        priceUomId="EUR" 
+        productStoreId="9000" 
+        shipmentCostEstimateId="10000" 
+        shipmentMethodTypeId="bpost_Pugo"
+        />
+    
+    <ShipmentCostEstimate 
+        productStoreShipMethId="bpost_Pugo" 
+        carrierPartyId="bpost" 
+        geoIdFrom="BEL" 
+        orderFlatPrice="3.00" 
+        orderPricePercent="0.000000" 
+        priceUomId="EUR" 
+        productStoreId="9000" 
+        shipmentCostEstimateId="10000" 
+        shipmentMethodTypeId="bpost_Pugo"
+        />
+    
+    <ShipmentCostEstimate 
+        productStoreShipMethId="bpost_Depot" 
+        carrierPartyId="bpost" 
+        geoIdFrom="BEL" 
+        orderFlatPrice="3.00" 
+        orderPricePercent="0.000000" 
+        priceUomId="EUR" 
+        productStoreId="9000" 
+        shipmentCostEstimateId="10000" 
+        shipmentMethodTypeId="bpost_Depot"
+        />
+    
+    <ShipmentCostEstimate 
+        productStoreShipMethId="bpost_Express" 
+        carrierPartyId="bpost" 
+        geoIdFrom="BEL" 
+        orderFlatPrice="10.00" 
+        orderPricePercent="0.000000" 
+        priceUomId="EUR" 
+        productStoreId="9000" 
+        shipmentCostEstimateId="10000" 
+        shipmentMethodTypeId="bpost_Express"
+        />
+    
+    <ShipmentCostEstimate 
+        productStoreShipMethId="bpost_Business" 
+        carrierPartyId="bpost" 
+        geoIdFrom="BEL" 
+        orderFlatPrice="10.00" 
+        orderPricePercent="0.000000" 
+        priceUomId="EUR" 
+        productStoreId="9000" 
+        shipmentCostEstimateId="10000" 
+        shipmentMethodTypeId="bpost_Business"
+        />
     
 </entity-engine-xml>
