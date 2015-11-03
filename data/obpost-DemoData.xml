@@ -17,5 +17,15 @@
  -->
 
 <entity-engine-xml>
-
+    <ProductStoreShipmentMeth 
+        productStoreShipMethId="9116" 
+        productStoreId="9100" 
+        partyId="FEDEX" 
+        includeNoChargeItems="N" 
+        allowUspsAddr="N" 
+        requireUspsAddr="N" 
+        roleTypeId="CARRIER" 
+        shipmentMethodTypeId="GROUND_HOME" 
+        sequenceNumber="17"/>
+    
 </entity-engine-xml>

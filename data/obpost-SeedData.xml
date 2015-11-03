@@ -17,10 +17,6 @@
  -->
 
 <entity-engine-xml>
-
-    <ShipmentGatewayConfigType shipmentGatewayConfTypeId="obpost" hasTable="N" description="BPost Shipment Gateway"/>
-    <ShipmentGatewayConfig shipmentGatewayConfigId="obpost" shipmentGatewayConfTypeId="obpost" description="UPS Config"/>
-    <ShipmentGatewayBpost shipmentGatewayConfigId="obpost" connectUrl="https://wwwcie.obpost.com/obpost.app/xml" connectTimeout="60" shipperNumber="12345E" billShipperAccountNumber="12345E" accessLicenseNumber="TEST262223144CAT" accessUserId="REG111111" accessPassword="REG111111" saveCertInfo="true" saveCertPath="${sys:getProperty('ofbiz.home')}/runtime/output/obpostcert" shipperPickupType="06" customerClassification="03" maxEstimateWeight="90" minEstimateWeight="0.1" codAllowCod="true" codSurchargeAmount="9" codSurchargeCurrencyUomId="USD" codSurchargeApplyToPackage="first" codFundsCode="0" defaultReturnLabelMemo="UPS Shipment Return Memo" defaultReturnLabelSubject="UPS Shipment Return Label"/>
     
     <Party partyId="obpost" partyTypeId="PARTY_GROUP"/>
     <PartyGroup partyId="obpost" groupName="BPost"/>
@@ -29,5 +25,9 @@
     <PartyRole partyId="obpost" roleTypeId="VENDOR" fromDate="2001-01-01 00:00:00.000"/>
     <PartyRole partyId="obpost" roleTypeId="BILL_FROM_VENDOR" fromDate="2001-01-01 00:00:00.000"/>
     <PartyRole partyId="obpost" roleTypeId="SHIP_FROM_VENDOR" fromDate="2001-01-01 00:00:00.000"/>
-
+    
+    <ShipmentGatewayConfigType shipmentGatewayConfTypeId="obpost" hasTable="N" description="BPost Shipment Gateway"/>
+    <ShipmentGatewayConfig shipmentGatewayConfigId="obpost" shipmentGatewayConfTypeId="obpost" description="BPost Config"/>
+   
+    
 </entity-engine-xml>
