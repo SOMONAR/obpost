@@ -19,9 +19,9 @@
 <menus xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://ofbiz.apache.org/dtds/widget-menu.xsd">
 
     
-    <menu name="ConfigurationTabBar" extends="CommonTabBarMenu" extends-resource="component://common/widget/CommonMenus.xml"
+    <menu name="CarrierTabBar" extends="CommonTabBarMenu" extends-resource="component://common/widget/CommonMenus.xml"
           default-menu-item-name="systemProperties">
-        <menu-item name="systemProperties" title="${uiLabelMap.SystemProperties}">
+        <menu-item name="CarrierMethods" title="${uiLabelMap.CarrierMethods}">
             <condition>
                 <and>
                     <or>
@@ -29,26 +29,21 @@
                     </or>
                 </and>
             </condition>
-            <link target="systemproperties"/>
-        </menu-item>
-        <menu-item name="CarrierMethods" title="${uiLabelMap.Carrier} ${uiLabelMap.CommonMethods}">
-            <condition>
-                <if-has-permission permission="${activeApp}" action="_ADMIN"/>
-            </condition>
             <link target="carriermethods"/>
         </menu-item>
     </menu>
     
-    <menu name="ConfigurationSubTabBar" extends="CommonTabBarMenu" extends-resource="component://common/widget/CommonMenus.xml"
+    <menu name="CarrierSubTabBar" extends="CommonTabBarMenu" extends-resource="component://common/widget/CommonMenus.xml"
           menu-container-style="button-bar button-style-2 no-clear">
-        <menu-item name="createSystemProperty" title="${uiLabelMap.NewSystemProperty}">
+        <menu-item name="NewCarrierMethod" title="${uiLabelMap.CommonNew} ${uiLabelMap.CommonMethod}">
             <condition>
                 <or>
                     <if-has-permission permission="${activeApp}" action="_ADMIN"/>
                 </or>
             </condition>
-            <link target="newsystemproperty">
-                <parameter param-name="systemResourceId" value="${activeApp}"/>
+            <link target="newcarriermethod">
+                <parameter param-name="partyId" value="${partyId}"/>
+                <parameter param-name="roleTypeId" value="CARRIER"/>
             </link>
         </menu-item>
     </menu>

@@ -71,6 +71,34 @@
         </section>
     </screen>
     
+    <screen name="CommonCarrierDecorator">
+        <section>
+            <actions>
+                <property-map resource="CarrierUiLabels" map-name="uiLabelMap" global="true"/>
+                <set field="systemResourceId" value="${activeApp}"/>
+                <set field="headerItem" value="configuration"/>
+            </actions>
+            <widgets>
+                <decorator-screen name="main-decorator" location="${parameters.mainDecoratorLocation}">
+                    <decorator-section name="body">
+                        <section>
+                            <condition>
+                                <if-has-permission permission="${activeApp}" action="_ADMIN"/>
+                            </condition>
+                            <widgets>
+                                <include-menu name="ConfigurationTabBar" location="component://${activeApp}/widget/ConfigurationMenus.xml"/>
+                                <decorator-section-include name="body"/>
+                            </widgets>
+                            <fail-widgets>
+                                <label style="h3">${uiLabelMap.${activeApp}ViewPermissionError}</label>
+                            </fail-widgets>
+                        </section>
+                    </decorator-section>
+                </decorator-screen>
+            </widgets>
+        </section>
+    </screen>
+    
     <screen name="CommonDecorator">
         <section>
             <actions>
