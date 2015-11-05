@@ -46,4 +46,10 @@
         <auto-attributes include="nonpk" mode="IN" optional="true"/>
     </service>
     
+    <service name="confirmBPostShipment" engine="java"
+      location="com.somonar.orrtiz.shipment.obpost.BPostServices" invoke="confirmBPostShipment" auth="true" max-retry="3">
+    <description>Confirm BPost Shipment</description>
+    <auto-attributes entity-name="ShipmentRouteSegment" include="pk" mode="IN" optional="false"/>
+  </service>
+    
 </services>
