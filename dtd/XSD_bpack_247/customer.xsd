@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schema.post.be/ServiceController/customer" elementFormDefault="qualified" targetNamespace="http://schema.post.be/ServiceController/customer" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="Customer" nillable="true" type="tns:Customer" />
+  <xs:complexType name="Customer">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="FirstName" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="LastName" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Street" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Number" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="IsComfortZoneUser" type="xs:boolean" />
+      <xs:element minOccurs="0" maxOccurs="1" name="CompanyName" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Country" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="DateOfBirth" nillable="true" type="xs:date" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Email" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="MobilePrefix" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="MobileNumber" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="OptIn" type="xs:boolean" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Bus" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Postalcode" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="PreferredLanguage" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="ReceivePromotions" type="xs:boolean" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Title" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Town" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="UseInformationForThirdParty" type="xs:boolean" />
+      <xs:element minOccurs="0" maxOccurs="1" name="packstationID" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

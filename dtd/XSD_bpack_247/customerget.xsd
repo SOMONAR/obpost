@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schema.post.be/ServiceController/customerget" elementFormDefault="qualified" targetNamespace="http://schema.post.be/ServiceController/customerget" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://microsoft.com/wsdl/types/" />
+  <xs:element name="Customer" nillable="true" type="tns:CustomerGet" />
+  <xs:complexType name="CustomerGet">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="UserID" xmlns:q1="http://microsoft.com/wsdl/types/" type="q1:guid" />
+      <xs:element minOccurs="0" maxOccurs="1" name="FirstName" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="LastName" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Street" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Number" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="CompanyName" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Country" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="DateOfBirth" type="xs:date" />
+      <xs:element minOccurs="0" maxOccurs="1" name="DeliveryCode" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Email" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="MobilePrefix" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="MobileNumber" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Password" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Postalcode" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="PreferredLanguage" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="ReceivePromotions" type="xs:boolean" />
+      <xs:element minOccurs="1" maxOccurs="1" name="actived" type="xs:boolean" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Title" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Town" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Bus" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="UseInformationForThirdParty" type="xs:boolean" />
+      <xs:element minOccurs="0" maxOccurs="1" name="PackStations" type="tns:ArrayOfBPost_CustomerPackstation" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ArrayOfBPost_CustomerPackstation">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CustomerPackStation" nillable="true" type="tns:BPost_CustomerPackstation" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="BPost_CustomerPackstation">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="CustomLabel" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="OrderNumber" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="1" name="PackstationID" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="PackstationInformation" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

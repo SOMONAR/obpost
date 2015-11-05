@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schema.post.be/common/exception/v1/" elementFormDefault="qualified" targetNamespace="http://schema.post.be/common/exception/v1/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="businessException" nillable="true" type="tns:FunctionalException" />
+  <xs:complexType name="FunctionalException">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="Code" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Message" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="systemException" nillable="true" type="tns:SystemException" />
+  <xs:complexType name="SystemException">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="Message" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>
