@@ -116,4 +116,18 @@
     systemResourceId="obpost"
     />
     
+    <SystemProperty
+    systemPropertyId="estimateRateService.name" 
+    systemPropertyValue="estimateBPostRate" 
+    description="Name of the carrier specific rate estimation service." 
+    systemResourceId="obpost"
+    />
+    
+    <SystemProperty
+    systemPropertyId="estimateRateService.enabled" 
+    systemPropertyValue="False" 
+    description="Indicator whether the OFBiz estimateRateService is enabled. Options: False, True. Default value: False"
+    systemResourceId="obpost"
+    />
+    
 </entity-engine-xml>

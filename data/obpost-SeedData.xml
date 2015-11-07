@@ -26,7 +26,6 @@
     <PartyRole partyId="bpost" roleTypeId="BILL_FROM_VENDOR" fromDate="2001-01-01 00:00:00.000"/>
     <PartyRole partyId="bpost" roleTypeId="SHIP_FROM_VENDOR" fromDate="2001-01-01 00:00:00.000"/>
     
-    
     <GeoPoint 
         geoPointId="bpost"
         dataSourceId="GEOPT_GOOGLE"
@@ -65,5 +64,23 @@
     <CarrierShipmentMethod partyId="bpost" roleTypeId="CARRIER" shipmentMethodTypeId="bpost_Express" sequenceNumber="4" carrierServiceCode="bpack EXPRESS"/>
     <CarrierShipmentMethod partyId="bpost" roleTypeId="CARRIER" shipmentMethodTypeId="bpost_Business" sequenceNumber="5" carrierServiceCode="bpack BUSINESS"/>
     
+    
+    <!-- stored templates -->
+    <!-- ShipRequest -->
+    <DataResource dataResourceId="obpost_ShipRequest" dataResourceTypeId="CONTEXT_FILE" dataTemplateTypeId="FTL" objectInfo=""/>
+    <Content contentId="obpost_ShipRequest " contentTypeId="DOCUMENT" ownerContentId="" dataResourceId="obpost_ShipRequest" contentName="BPost ShipRequest"/>
+    
+    <ElectronicText dataResourceId="obpost_ShipRequest">
+        <textData>
+<![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<#compress>
+
+
+
+</#compress>]]>
+        </textData>
+    </ElectronicText>
+    
+    <!-- confirmBPostShipment -->
     
 </entity-engine-xml>
