@@ -24,6 +24,7 @@
     </property>
     <property key="Gateway">
         <value xml:lang="en">Gateway</value>
+        <value xml:lang="nl">Gateway</value>
     </property>
     <property key="SystemProperty">
         <value xml:lang="en">System Property</value>
@@ -35,7 +36,37 @@
     </property>
     <property key="NewSystemProperty">
         <value xml:lang="en">New System Property</value>
-        <value xml:lang="nl">Nieuw configuratie-element </value>
+        <value xml:lang="nl">Nieuw configuratie-element</value>
+    </property>
+    
+    <property key="NewShipmentMethod">
+        <value xml:lang="en">New Shipment Method</value>
+        <value xml:lang="nl">Nieuwe verzendmethode</value>
+    </property>
+    
+    <property key="ShipmentMethod">
+        <value xml:lang="en">Shipment Method</value>
+        <value xml:lang="nl">Verzendmethode</value>
+    </property>
+    
+    <property key="ShipmentMethods">
+        <value xml:lang="en">Shipment Methods</value>
+        <value xml:lang="nl">Verzendmethoden</value>
+    </property>
+    
+    <property key="NewShipmentBox">
+        <value xml:lang="en">New Shipment Package</value>
+        <value xml:lang="nl">Nieuwe verzendverpakking</value>
+    </property>
+    
+    <property key="ShipmentBox">
+        <value xml:lang="en">Shipment Package</value>
+        <value xml:lang="nl">Verzendverpakking</value>
+    </property>
+    
+    <property key="ShipmentBoxes">
+        <value xml:lang="en">Shipment Packages</value>
+        <value xml:lang="nl">Verzendverpakkingen</value>
     </property>
     
 </resource>
