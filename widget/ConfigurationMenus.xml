@@ -36,19 +36,19 @@
             </condition>
             <link target="shipmentmethods"/>
         </menu-item>
+        <menu-item name="ShipmentBoxes" title="${uiLabelMap.CommonShipment} ${uiLabelMap.CommonBoxes}">
+            <condition>
+                <if-has-permission permission="${activeApp}" action="_ADMIN"/>
+            </condition>
+            <link target="shipmentboxes"/>
+        </menu-item>
         <menu-item name="ShipmentMethodTypes" title="${uiLabelMap.CommonMethod} ${uiLabelMap.CommonTypes}">
             <condition>
                 <if-has-permission permission="${activeApp}" action="_ADMIN"/>
             </condition>
             <link target="shipmentmethodtypes"/>
         </menu-item>
-        <menu-item name="ShipmentBoxes" title="${uiLabelMap.ShipmentBoxes}">
-            <condition>
-                <if-has-permission permission="${activeApp}" action="_ADMIN"/>
-            </condition>
-            <link target="shipmentboxes"/>
-        </menu-item>
-        <menu-item name="BoxTypes" title="${uiLabelMap.BoxTypes}">
+        <menu-item name="BoxTypes" title="${uiLabelMap.CommonBox} ${uiLabelMap.CommonTypes}">
             <condition>
                 <if-has-permission permission="${activeApp}" action="_ADMIN"/>
             </condition>
@@ -79,7 +79,7 @@
                 <parameter param-name="roleTypeId" value="CARRIER"/>
             </link>
         </menu-item>
-        <menu-item name="NewShipmentBox" title="${uiLabelMap.NewShipmentBox}">
+        <menu-item name="NewShipmentBox" title="${uiLabelMap.CommonNew} ${uiLabelMap.CommonShipment} ${uiLabelMap.CommonBox}">
             <condition>
                 <or>
                     <if-has-permission permission="${activeApp}" action="_ADMIN"/>
@@ -89,7 +89,7 @@
                 <parameter param-name="partyId" value="${partyId}"/>
             </link>
         </menu-item>
-        <menu-item name="NewShipmentMethodType" title="${uiLabelMap.CommonNew} ${uiLabelMap.NewShipmentMethodType}">
+        <menu-item name="NewShipmentMethodType" title="${uiLabelMap.CommonNew} ${uiLabelMap.CommonMethod} ${uiLabelMap.CommonType}">
             <condition>
                 <or>
                     <if-has-permission permission="${activeApp}" action="_ADMIN"/>
@@ -97,7 +97,7 @@
             </condition>
             <link target="newshipmentmethodtype"/>
         </menu-item>
-        <menu-item name="NewBoxType" title="${uiLabelMap.CommonNew} ${uiLabelMap.NewBoxType}">
+        <menu-item name="NewBoxType" title="${uiLabelMap.CommonNew} ${uiLabelMap.CommonBox} ${uiLabelMap.CommonType}">
             <condition>
                 <or>
                     <if-has-permission permission="${activeApp}" action="_ADMIN"/>
