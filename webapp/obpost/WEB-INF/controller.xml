@@ -86,36 +86,139 @@
         <response name="success" type="view" value="systemproperties"/>
     </request-map>
     
-    <!-- Carrier Config --> 
-    <request-map uri="carriermethods">
+    <!-- shipment methods -->
+    <request-map uri="shipmentmethods">
         <security https="true" auth="true"/>
-        <response name="success" type="view" value="carriermethods"/>
+        <response name="success" type="view" value="shipmentmethods"/>
     </request-map>
-    <request-map uri="newcarriermethod">
+    <request-map uri="newshipmentmethod">
         <security https="true" auth="true"/>
-        <response name="success" type="view" value="newcarriermethod"/>
+        <response name="success" type="view" value="newshipmentmethod"/>
     </request-map>
-    <request-map uri="createcarriermethod">
+    <request-map uri="createshipmentmethod">
         <security https="true" auth="true"/>
-        <event type="service" invoke="createCarrierShipmentMethod"/>
-        <response name="success" type="view" value="carriermethods"/>
-        <response name="error" type="view" value="carriermethods"/>
+        <event type="service" invoke="createShipmentMethod"/>
+        <response name="success" type="view" value="shipmentmethods"/>
     </request-map>
-    <request-map uri="editcarriermethod">
+    <request-map uri="removeshipmentmethod">
         <security https="true" auth="true"/>
-        <response name="success" type="view" value="editcarriermethod"/>
+        <event type="service" invoke="removeShipmentMethod"/>
+        <response name="success" type="view" value="shipmentmethods"/>
     </request-map>
-    <request-map uri="removecarriermethod">
+    <request-map uri="editshipmentmethod">
         <security https="true" auth="true"/>
-        <event type="service" invoke="removeCarrierShipmentMethod"/>
-        <response name="success" type="view" value="carriermethods"/>
-        <response name="error" type="view" value="carriermethods"/>
+        <response name="success" type="view" value="editshipmentmethod"/>
     </request-map>
-    <request-map uri="updatecarriermethod">
+    <request-map uri="updateshipmentmethod">
         <security https="true" auth="true"/>
-        <event type="service" invoke="updateCarrierShipmentMethod"/>
-        <response name="success" type="view" value="carriermethods"/>
-        <response name="error" type="view" value="carriermethods"/>
+        <event type="service" invoke="updateShipmentMethod"/>
+        <response name="success" type="view" value="shipmentmethods"/>
+        <response name="error" type="view" value="editshipmentmethod"/>
+    </request-map>
+    
+    <request-map uri="updateShipmentMethodseq">
+        <security https="true" auth="true"/>
+        <event type="service" invoke="updateShipmentMethodseq"/>
+        <response name="success" type="view" value="shipmentmethods"/>
+        <response name="error" type="view" value="shipmentmethods"/>
+    </request-map>
+    
+    <!-- shipment methods -->
+    <request-map uri="shipmentmethodtypes">
+        <security https="true" auth="true"/>
+        <response name="success" type="view" value="shipmentmethodtypes"/>
+    </request-map>
+    <request-map uri="newshipmentmethodtype">
+        <security https="true" auth="true"/>
+        <response name="success" type="view" value="newshipmentmethodtype"/>
+    </request-map>
+    <request-map uri="createshipmentmethodtype">
+        <security https="true" auth="true"/>
+        <event type="service" invoke="createShipmentMethodtype"/>
+        <response name="success" type="view" value="shipmentmethodtypes"/>
+    </request-map>
+    <request-map uri="removeshipmentmethodtype">
+        <security https="true" auth="true"/>
+        <event type="service" invoke="removeShipmentMethodType"/>
+        <response name="success" type="view" value="shipmentmethodtypes"/>
+    </request-map>
+    <request-map uri="editshipmentmethodtype">
+        <security https="true" auth="true"/>
+        <response name="success" type="view" value="editshipmentmethodtype"/>
+    </request-map>
+    <request-map uri="updateshipmentmethodtype">
+        <security https="true" auth="true"/>
+        <event type="service" invoke="updateShipmentMethodType"/>
+        <response name="success" type="view" value="shipmentmethodtypes"/>
+        <response name="error" type="view" value="editshipmentmethodtype"/>
+    </request-map>
+    
+    <!-- shipment boxes -->
+    <request-map uri="shipmentboxes">
+        <security https="true" auth="true"/>
+        <response name="success" type="view" value="shipmentboxes"/>
+    </request-map>
+    <request-map uri="newshipmentbox">
+        <security https="true" auth="true"/>
+        <response name="success" type="view" value="newshipmentbox"/>
+    </request-map>
+    <request-map uri="createshipmentbox">
+        <security https="true" auth="true"/>
+        <event type="service" invoke="createShipmentBox"/>
+        <response name="success" type="view" value="shipmentboxes"/>
+    </request-map>
+    <request-map uri="removeshipmentbox">
+        <security https="true" auth="true"/>
+        <event type="service" invoke="removeShipmentBox"/>
+        <response name="success" type="view" value="shipmentboxes"/>
+    </request-map>
+    <request-map uri="editshipmentbox">
+        <security https="true" auth="true"/>
+        <response name="success" type="view" value="editshipmentbox"/>
+    </request-map>
+    <request-map uri="updateshipmentbox">
+        <security https="true" auth="true"/>
+        <event type="service" invoke="updateShipmentBox"/>
+        <response name="success" type="view" value="shipmentboxes"/>
+        <response name="error" type="view" value="editshipmentbox"/>
+    </request-map>
+    
+    <!-- box types -->
+    <request-map uri="boxtypes">
+        <security https="true" auth="true"/>
+        <response name="success" type="view" value="boxtypes"/>
+    </request-map>
+    <request-map uri="newboxtype">
+        <security https="true" auth="true"/>
+        <response name="success" type="view" value="newboxtype"/>
+    </request-map>
+    <request-map uri="createboxtype">
+        <security https="true" auth="true"/>
+        <event type="service" invoke="createBoxType"/>
+        <response name="success" type="view" value="boxtypes"/>
+    </request-map>
+    <request-map uri="removeboxtype">
+        <security https="true" auth="true"/>
+        <event type="service" invoke="removeBoxType"/>
+        <response name="success" type="view" value="boxtypes"/>
+    </request-map>
+    <request-map uri="editboxtype">
+        <security https="true" auth="true"/>
+        <response name="success" type="view" value="editboxtype"/>
+    </request-map>
+    <request-map uri="updateboxtype">
+        <security https="true" auth="true"/>
+        <event type="service" invoke="updateBoxType"/>
+        <response name="success" type="view" value="boxtypes"/>
+        <response name="error" type="view" value="editshipmentbox"/>
+    </request-map>
+    
+    <!-- Carrier requests -->
+    <request-map uri="confirm">
+        <security https="true" auth="true"/>
+        <event type="service" path="" invoke="bpostShipmentConfirm"/>
+        <response name="success" type="cross-redirect" value="facility/control/EditShipmentRouteSegments"><redirect-parameter name="shipmentId"/></response>
+        <response name="error" type="cross-redirect" value="facility/control/EditShipmentRouteSegments"><redirect-parameter name="shipmentId"/></response>
     </request-map>
     
     <!-- View Mappings -->
@@ -127,12 +230,24 @@
     <view-map name="newsystemproperty" type="screen" page="component://obpost/widget/ConfigurationScreens.xml#NewSystemProperty"/>
     <view-map name="editsystemproperty" type="screen" page="component://obpost/widget/ConfigurationScreens.xml#EditSystemProperty"/>
     
-    <!-- Carrier Config -->
-    <view-map name="carriermethods" page="component://obpost//widget/CarrierScreens.xml#CarrierMethods" type="screen"/>
-    <view-map name="newcarriermethod" page="component://obpost//widget/CarrierScreens.xml#NewCarrierMethod" type="screen"/>
-    <view-map name="editcarriermethod" page="component://obpost//widget/CarrierScreens.xml#EditCarrierMethod" type="screen"/>
+    <!-- shipment methods -->
+    <view-map name="shipmentmethods" page="component://obpost/widget/ConfigurationScreens.xml#ShipmentMethods" type="screen"/>
+    <view-map name="newshipmentmethod" page="component://obpost/widget/ConfigurationScreens.xml#NewShipmentMethod" type="screen"/>
+    <view-map name="editshipmentmethod" page="component://obpost/widget/ConfigurationScreens.xml#EditShipmentMethod" type="screen"/>
     
-    <view-map name="test" type="screen" page="component://obpost/widget/obpost-Screens.xml#Test"/>
-    <view-map name="testreview" type="screen" page="component://obpost/widget/obpost-Screens.xml#TestReview"/>
+    <!-- shipment method typess -->
+    <view-map name="shipmentmethodtypes" page="component://obpost/widget/ConfigurationScreens.xml#ShipmentMethodTypes" type="screen"/>
+    <view-map name="newshipmentmethodtype" page="component://obpost/widget/ConfigurationScreens.xml#NewShipmentMethodType" type="screen"/>
+    <view-map name="editshipmentmethodtype" page="component://obpost/widget/ConfigurationScreens.xml#EditShipmentMethodType" type="screen"/>
+    
+    <!-- shipment boxes -->
+    <view-map name="shipmentboxes" page="component://obpost/widget/ConfigurationScreens.xml#ShipmentBoxes" type="screen"/>
+    <view-map name="newshipmentbox" page="component://obpost/widget/ConfigurationScreens.xml#NewShipmentBox" type="screen"/>
+    <view-map name="editshipmentbox" page="component://obpost/widget/ConfigurationScreens.xml#EditShipmentBox" type="screen"/>
+    
+    <!-- box types -->
+    <view-map name="boxtypes" page="component://obpost/widget/ConfigurationScreens.xml#BoxTypes" type="screen"/>
+    <view-map name="newboxtype" page="component://obpost/widget/ConfigurationScreens.xml#NewBoxType" type="screen"/>
+    <view-map name="editboxtype" page="component://obpost/widget/ConfigurationScreens.xml#EditBoxType" type="screen"/>
     
 </site-conf>
