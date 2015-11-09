@@ -15,7 +15,6 @@
  limitations under the License.
 
  -->
-
 <menus xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://ofbiz.apache.org/dtds/widget-menu.xsd">
 
     
@@ -31,17 +30,35 @@
             </condition>
             <link target="systemproperties"/>
         </menu-item>
-        <menu-item name="CarrierMethods" title="${uiLabelMap.Carrier} ${uiLabelMap.CommonMethods}">
+        <menu-item name="ShipmentMethods" title="${uiLabelMap.Carrier} ${uiLabelMap.CommonMethods}">
             <condition>
                 <if-has-permission permission="${activeApp}" action="_ADMIN"/>
             </condition>
-            <link target="carriermethods"/>
+            <link target="shipmentmethods"/>
+        </menu-item>
+        <menu-item name="ShipmentMethodTypes" title="${uiLabelMap.CommonMethod} ${uiLabelMap.CommonTypes}">
+            <condition>
+                <if-has-permission permission="${activeApp}" action="_ADMIN"/>
+            </condition>
+            <link target="shipmentmethodtypes"/>
+        </menu-item>
+        <menu-item name="ShipmentBoxes" title="${uiLabelMap.ShipmentBoxes}">
+            <condition>
+                <if-has-permission permission="${activeApp}" action="_ADMIN"/>
+            </condition>
+            <link target="shipmentboxes"/>
+        </menu-item>
+        <menu-item name="BoxTypes" title="${uiLabelMap.BoxTypes}">
+            <condition>
+                <if-has-permission permission="${activeApp}" action="_ADMIN"/>
+            </condition>
+            <link target="boxtypes"/>
         </menu-item>
     </menu>
     
     <menu name="ConfigurationSubTabBar" extends="CommonTabBarMenu" extends-resource="component://common/widget/CommonMenus.xml"
           menu-container-style="button-bar button-style-2 no-clear">
-        <menu-item name="createSystemProperty" title="${uiLabelMap.NewSystemProperty}">
+        <menu-item name="NewSystemProperty" title="${uiLabelMap.NewSystemProperty}">
             <condition>
                 <or>
                     <if-has-permission permission="${activeApp}" action="_ADMIN"/>
@@ -50,6 +67,43 @@
             <link target="newsystemproperty">
                 <parameter param-name="systemResourceId" value="${activeApp}"/>
             </link>
+        </menu-item>
+        <menu-item name="NewShipmentMethod" title="${uiLabelMap.CommonNew} ${uiLabelMap.CommonMethod}">
+            <condition>
+                <or>
+                    <if-has-permission permission="${activeApp}" action="_ADMIN"/>
+                </or>
+            </condition>
+            <link target="newshipmentmethod">
+                <parameter param-name="partyId" value="${partyId}"/>
+                <parameter param-name="roleTypeId" value="CARRIER"/>
+            </link>
+        </menu-item>
+        <menu-item name="NewShipmentBox" title="${uiLabelMap.NewShipmentBox}">
+            <condition>
+                <or>
+                    <if-has-permission permission="${activeApp}" action="_ADMIN"/>
+                </or>
+            </condition>
+            <link target="newshipmentbox">
+                <parameter param-name="partyId" value="${partyId}"/>
+            </link>
+        </menu-item>
+        <menu-item name="NewShipmentMethodType" title="${uiLabelMap.CommonNew} ${uiLabelMap.NewShipmentMethodType}">
+            <condition>
+                <or>
+                    <if-has-permission permission="${activeApp}" action="_ADMIN"/>
+                </or>
+            </condition>
+            <link target="newshipmentmethodtype"/>
+        </menu-item>
+        <menu-item name="NewBoxType" title="${uiLabelMap.CommonNew} ${uiLabelMap.NewBoxType}">
+            <condition>
+                <or>
+                    <if-has-permission permission="${activeApp}" action="_ADMIN"/>
+                </or>
+            </condition>
+            <link target="newboxtype"/>
         </menu-item>
     </menu>
 </menus>
