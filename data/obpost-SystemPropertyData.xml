@@ -19,6 +19,13 @@
 <entity-engine-xml>
     
     <SystemProperty
+    systemPropertyId="carrierPartyId" 
+    systemPropertyValue="bpost" 
+    description="obpost associated carrier (partyId)" 
+    systemResourceId="obpost"
+    />
+    
+    <SystemProperty
     systemPropertyId="HostName" 
     systemPropertyValue="shippingmanager.bpost.be" 
     description="BPost API HostName" 
@@ -85,13 +92,6 @@
     systemPropertyId="action" 
     systemPropertyValue="START" 
     description="BPost actions: START opens the redirect page, CONFIRM confirms the order" 
-    systemResourceId="obpost"
-    />
-    
-    <SystemProperty
-    systemPropertyId="carrierPartyId" 
-    systemPropertyValue="bpost" 
-    description="obpost associated carrier (partyId)" 
     systemResourceId="obpost"
     />
     
