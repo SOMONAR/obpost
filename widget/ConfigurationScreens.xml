@@ -1,0 +1,423 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+(C) Copyright 2015 Somonar B.V.
+
+ Licensed under the Apache License, Version 2.0 (the "License");
+ you may not use this file except in compliance with the License.
+ You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+ Unless required by applicable law or agreed to in writing, software
+ distributed under the License is distributed on an "AS IS" BASIS,
+ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ See the License for the specific language governing permissions and
+ limitations under the License.
+
+ -->
+ 
+<screens xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="http://ofbiz.apache.org/dtds/widget-screen.xsd">
+
+    <screen name="Configuration">
+        <section>
+            <widgets>
+                <decorator-screen name="CommonConfigurationDecorator" location="${parameters.mainDecoratorLocation}">
+                    <decorator-section name="body">
+                        <section>
+                            <condition>
+                                <if-has-permission permission="${activeApp}" action="_ADMIN"/>
+                            </condition>
+                            <widgets>
+                               
+                            </widgets>
+                            <fail-widgets>
+                                <label style="h3">${uiLabelMap.${activeApp}ViewPermissionError}</label>
+                            </fail-widgets>
+                        </section>
+                    </decorator-section>
+                </decorator-screen>
+            </widgets>
+        </section>
+    </screen>
+    
+    <screen name="SystemProperties">
+        <section>
+            <widgets>
+                <decorator-screen name="CommonConfigurationDecorator" location="${parameters.mainDecoratorLocation}">
+                    <decorator-section name="body">
+                        <section>
+                            <actions>
+                                <entity-condition entity-name="SystemProperty" list="systemProperties">
+                                    <condition-expr field-name="systemResourceId" operator="equals" value="${activeApp}"/>
+                                </entity-condition>
+                            </actions>
+                            <widgets>
+                                <screenlet title="${activeApp}">
+                                    <include-form location="component://${activeApp}/widget/forms/ConfigurationForms.xml" name="ListSystemProperties"/>
+                                </screenlet>
+                            </widgets>
+                            <fail-widgets>
+                                <label style="h3">${uiLabelMap.${activeApp}ViewPermissionError}</label>
+                            </fail-widgets>
+                        </section>
+                    </decorator-section>
+                </decorator-screen>
+            </widgets>
+        </section>
+    </screen>
+    
+    <screen name="NewSystemProperty">
+        <section>
+            <widgets>
+                <decorator-screen name="CommonConfigurationDecorator" location="${parameters.mainDecoratorLocation}">
+                    <decorator-section name="body">
+                        <section>
+                            <condition>
+                                <if-has-permission permission="${activeApp}" action="_ADMIN"/>
+                            </condition>
+                            <widgets>
+                                <screenlet title="${uiLabelMap.NewSystemProperty} ${uiLabelMap.CommonOf} ${activeApp}">
+                                    <include-form location="component://${activeApp}/widget/forms/ConfigurationForms.xml" name="NewSystemProperty"/>
+                                </screenlet>
+                            </widgets>
+                            <fail-widgets>
+                                <label style="h3">${uiLabelMap.${activeApp}ViewPermissionError}</label>
+                            </fail-widgets>
+                        </section>
+                    </decorator-section>
+                </decorator-screen>
+            </widgets>
+        </section>
+    </screen>
+    
+    <screen name="EditSystemProperty">
+        <section>
+            <widgets>
+                <decorator-screen name="CommonConfigurationDecorator" location="${parameters.mainDecoratorLocation}">
+                    <decorator-section name="body">
+                        <section>
+                            <actions>
+                                <entity-one value-field="systemProperty" entity-name="SystemProperty">
+                                    <field-map field-name="systemResourceId" from-field="parameters.systemResourceId"/>
+                                    <field-map field-name="systemPropertyId" from-field="parameters.systemPropertyId"/>
+                                </entity-one>
+                            </actions>
+                            <widgets>
+                                <screenlet title="${uiLabelMap.SystemProperty} ${uiLabelMap.CommonOf} ${activeApp}">
+                                    <include-form location="component://${activeApp}/widget/forms/ConfigurationForms.xml" name="EditSystemProperty"/>
+                                </screenlet>
+                            </widgets>
+                            <fail-widgets>
+                                <label style="h3">${uiLabelMap.${activeApp}ViewPermissionError}</label>
+                            </fail-widgets>
+                        </section>
+                    </decorator-section>
+                </decorator-screen>
+            </widgets>
+        </section>
+    </screen>
+    
+    <screen name="ShipmentMethods">
+        <section>
+            <widgets>
+                <decorator-screen name="CommonConfigurationDecorator" location="${parameters.mainDecoratorLocation}">
+                    <decorator-section name="body">
+                        <section>
+                            <actions>
+                                <set field="tabButtonItem" value="carriermehtods"/>
+                                <entity-one entity-name="SystemProperty" value-field="carrier">
+                                    <field-map field-name="systemResourceId" value="${activeApp}"/>
+                                    <field-map field-name="systemPropertyId" value="partyId"/>
+                                </entity-one>
+                                <set field="partyId" from-field="carrier.systemPropertyValue"/>
+                                <entity-condition entity-name="CarrierShipmentMethod" list="shipmentMethods">
+                                    <condition-expr field-name="partyId" from-field="partyId"/>
+                                </entity-condition>
+                            </actions>
+                            <widgets>
+                                <screenlet title=" ${activeApp} - ${carrier} - ${partyId}">
+                                    <include-form location="component://${activeApp}/widget/forms/ConfigurationForms.xml" name="ShipmentMethods"/>
+                                </screenlet>
+                            </widgets>
+                            <fail-widgets>
+                                <label style="h3">${uiLabelMap.${activeApp}ViewPermissionError}</label>
+                            </fail-widgets>
+                        </section>
+                    </decorator-section>
+                </decorator-screen>
+            </widgets>
+        </section>
+    </screen>
+    
+    <screen name="NewShipmentMethod">
+        <section>
+            <widgets>
+                <decorator-screen name="CommonConfigurationDecorator" location="${parameters.mainDecoratorLocation}">
+                    <decorator-section name="body">
+                        <section>
+                            <condition>
+                                <if-has-permission permission="${activeApp}" action="_ADMIN"/>
+                            </condition>
+                            <widgets>
+                                <screenlet title="${uiLabelMap.CommonNew} ${ShipmentMethod} ${uiLabelMap.CommonOf} ${activeApp}">
+                                    <include-form location="component://${activeApp}//widget/forms/ConfigurationForms.xml" name="NewShipmentMethod" />
+                                </screenlet>
+                            </widgets>
+                            <fail-widgets>
+                                <label style="h3">${uiLabelMap.${activeApp}ViewPermissionError}</label>
+                            </fail-widgets>
+                        </section>
+                    </decorator-section>
+                </decorator-screen>
+            </widgets>
+        </section>
+    </screen>
+    
+    <screen name="EditShipmentMethod">
+        <section>
+            <widgets>
+                <decorator-screen name="CommonConfigurationDecorator" location="${parameters.mainDecoratorLocation}">
+                    <decorator-section name="body">
+                        <section>
+                            <condition>
+                                <if-has-permission permission="${activeApp}" action="_ADMIN"/>
+                            </condition>
+                            <actions>
+                                <entity-one value-field="method" entity-name="CarrierShipmentMethod"></entity-one>
+                            </actions>
+                            <widgets>
+                                <screenlet title="${uiLabelMap.CommonEdit} ${ShipmentMethod} ${uiLabelMap.CommonOf} ${activeApp}">
+                                    <include-form location="component://${activeApp}//widget/forms/ConfigurationForms.xml" name="EditShipmentMethod"/>
+                                </screenlet>
+                            </widgets>
+                            <fail-widgets>
+                                <label style="h3">${uiLabelMap.${activeApp}ViewPermissionError}</label>
+                            </fail-widgets>
+                        </section>
+                    </decorator-section>
+                </decorator-screen>
+            </widgets>
+        </section>
+    </screen>
+    
+    <screen name="ShipmentMethodTypes">
+        <section>
+            <widgets>
+                <decorator-screen name="CommonConfigurationDecorator" location="${parameters.mainDecoratorLocation}">
+                    <decorator-section name="body">
+                        <section>
+                            <actions>
+                                <set field="titleProperty" value="Configuration"/>
+                                <set field="tabButtonItem" value="ShipmentMethodTypes"/>
+                                
+                            </actions>
+                            <widgets>
+                                <screenlet title="${uiLabelMap.ShipmentMethods} ${uiLabelMap.CommonOf} ${activeApp}">
+                                    <include-form location="component://${activeApp}//widget/forms/ConfigurationForms.xml" name="ShipmentMethodTypes"/>
+                                </screenlet>
+                            </widgets>
+                        </section>
+                    </decorator-section>
+                </decorator-screen>
+            </widgets>
+        </section>
+    </screen>
+    
+    <screen name="NewShipmentMethodType">
+        <section>
+            <widgets>
+                <decorator-screen name="CommonConfigurationDecorator" location="${parameters.mainDecoratorLocation}">
+                    <decorator-section name="body">
+                        <section>
+                            <condition>
+                                <if-has-permission permission="${activeApp}" action="_ADMIN"/>
+                            </condition>
+                            <widgets>
+                                <screenlet title="${uiLabelMap.CommonNew} ${ShipmentBox} ${uiLabelMap.CommonOf} ${activeApp}">
+                                    <include-form location="component://${activeApp}//widget/forms/ConfigurationForms.xml" name="NewShipmentMethodType" />
+                                </screenlet>
+                            </widgets>
+                            <fail-widgets>
+                                <label style="h3">${uiLabelMap.${activeApp}ViewPermissionError}</label>
+                            </fail-widgets>
+                        </section>
+                    </decorator-section>
+                </decorator-screen>
+            </widgets>
+        </section>
+    </screen>
+    
+    <screen name="EditShipmentMethodType">
+        <section>
+            <widgets>
+                <decorator-screen name="CommonConfigurationDecorator" location="${parameters.mainDecoratorLocation}">
+                    <decorator-section name="body">
+                        <section>
+                            <actions>
+                                <set field="shipmentMethodTypeId" from-field="parameters.shipmentMethodTypeId"/>
+                                <entity-one entity-name="ShipmentMethodType" value-field="methodType" />
+                            </actions>
+                            <widgets>
+                                <screenlet title="${uiLabelMap.CommonEdit} ${ShipmentBox} ${uiLabelMap.CommonOf} ${activeApp}">
+                                    <include-form  location="component://${activeApp}//widget/forms/ConfigurationForms.xml" name="EditShipmentMethodType"/>
+                                </screenlet>
+                            </widgets>
+                            <fail-widgets>
+                                <label style="h3">${uiLabelMap.${activeApp}ViewPermissionError}</label>
+                            </fail-widgets>
+                        </section>
+                    </decorator-section>
+                </decorator-screen>
+            </widgets>
+        </section>
+    </screen>
+    
+    <screen name="ShipmentBoxes">
+        <section>
+            <widgets>
+                <decorator-screen name="CommonConfigurationDecorator" location="${parameters.mainDecoratorLocation}">
+                    <decorator-section name="body">
+                        <section>
+                            <actions>
+                                <set field="titleProperty" value="Configuration"/>
+                                <set field="tabButtonItem" value="shipmentBoxes"/>
+                                <entity-condition list="boxes" entity-name="CarrierShipmentBoxType">
+                                    <condition-expr field-name="partyId" value="${partyId}"/>
+                                    <order-by field-name="shipmentBoxTypeId"/>
+                                </entity-condition>
+                            </actions>
+                            <widgets>
+                                <screenlet title="${uiLabelMap.ShipmentMethods} ${uiLabelMap.CommonOf} ${activeApp}">
+                                    <include-form location="component://${activeApp}//widget/forms/ConfigurationForms.xml" name="ShipmentBoxes"/>
+                                </screenlet>
+                            </widgets>
+                        </section>
+                    </decorator-section>
+                </decorator-screen>
+            </widgets>
+        </section>
+    </screen>
+    
+    <screen name="NewShipmentBox">
+        <section>
+            <widgets>
+                <decorator-screen name="CommonConfigurationDecorator" location="${parameters.mainDecoratorLocation}">
+                    <decorator-section name="body">
+                        <section>
+                            <condition>
+                                <if-has-permission permission="${activeApp}" action="_ADMIN"/>
+                            </condition>
+                            <widgets>
+                                <screenlet title="${uiLabelMap.CommonNew} ${ShipmentBox} ${uiLabelMap.CommonOf} ${activeApp}">
+                                    <include-form name="NewShipmentBox" location="component://${activeApp}//widget/forms/ConfigurationForms.xml"/>
+                                </screenlet>
+                            </widgets>
+                            <fail-widgets>
+                                <label style="h3">${uiLabelMap.${activeApp}ViewPermissionError}</label>
+                            </fail-widgets>
+                        </section>
+                    </decorator-section>
+                </decorator-screen>
+            </widgets>
+        </section>
+    </screen>
+    
+    <screen name="EditShipmentBox">
+        <section>
+            <widgets>
+                <decorator-screen name="CommonConfigurationDecorator" location="${parameters.mainDecoratorLocation}">
+                    <decorator-section name="body">
+                        <section>
+                            <condition>
+                                <if-has-permission permission="${activeApp}" action="_ADMIN"/>
+                            </condition>
+                            <actions>
+                                <entity-one value-field="box" entity-name="CarrierShipmentBoxType"></entity-one>
+                            </actions>
+                            <widgets>
+                                <screenlet title="${uiLabelMap.CommonEdit} ${ShipmentBox} ${uiLabelMap.CommonOf} ${activeApp}">
+                                    <include-form name="EditShipmentBox" location="component://${activeApp}//widget/forms/ConfigurationForms.xml"/>
+                                </screenlet>
+                            </widgets>
+                            <fail-widgets>
+                                <label style="h3">${uiLabelMap.${activeApp}ViewPermissionError}</label>
+                            </fail-widgets>
+                        </section>
+                    </decorator-section>
+                </decorator-screen>
+            </widgets>
+        </section>
+    </screen>
+    
+    <screen name="BoxTypes">
+        <section>
+            <widgets>
+                <decorator-screen name="CommonConfigurationDecorator" location="${parameters.mainDecoratorLocation}">
+                    <decorator-section name="body">
+                        <section>
+                            <actions>
+                                <set field="titleProperty" value="Configuration"/>
+                                <set field="tabButtonItem" value="shipmentBoxes"/>
+                            </actions>
+                            <widgets>
+                                <screenlet title="${uiLabelMap.ShipmentMethods} ${uiLabelMap.CommonOf} ${activeApp}">
+                                    <include-form location="component://${activeApp}//widget/forms/ConfigurationForms.xml" name="BoxTypes"/>
+                                </screenlet>
+                            </widgets>
+                        </section>
+                    </decorator-section>
+                </decorator-screen>
+            </widgets>
+        </section>
+    </screen>
+    
+    <screen name="NewBoxType">
+        <section>
+            <widgets>
+                <decorator-screen name="CommonConfigurationDecorator" location="${parameters.mainDecoratorLocation}">
+                    <decorator-section name="body">
+                        <section>
+                            <condition>
+                                <if-has-permission permission="${activeApp}" action="_ADMIN"/>
+                            </condition>
+                            <widgets>
+                                <screenlet title="${uiLabelMap.CommonNew} ${ShipmentBox} ${uiLabelMap.CommonOf} ${activeApp}">
+                                    <include-form location="component://${activeApp}//widget/forms/ConfigurationForms.xml" name="NewBoxType" />
+                                </screenlet>
+                            </widgets>
+                            <fail-widgets>
+                                <label style="h3">${uiLabelMap.${activeApp}ViewPermissionError}</label>
+                            </fail-widgets>
+                        </section>
+                    </decorator-section>
+                </decorator-screen>
+            </widgets>
+        </section>
+    </screen>
+    
+    <screen name="EditBoxType">
+        <section>
+            <widgets>
+                <decorator-screen name="CommonConfigurationDecorator" location="${parameters.mainDecoratorLocation}">
+                    <decorator-section name="body">
+                        <section>
+                            <actions>
+                                <set field="shipmentBoxTypeId" from-field="parameters.shipmentBoxTypeId"/>
+                                <entity-one entity-name="ShipmentBoxType" value-field="boxType" ></entity-one>
+                            </actions>
+                            <widgets>
+                                <screenlet title="${uiLabelMap.CommonEdit} ${ShipmentBox} ${uiLabelMap.CommonOf} ${activeApp}">
+                                    <include-form  location="component://${activeApp}//widget/forms/ConfigurationForms.xml" name="EditBoxType"/>
+                                </screenlet>
+                            </widgets>
+                            <fail-widgets>
+                                <label style="h3">${uiLabelMap.${activeApp}ViewPermissionError}</label>
+                            </fail-widgets>
+                        </section>
+                    </decorator-section>
+                </decorator-screen>
+            </widgets>
+        </section>
+    </screen>
+</screens>

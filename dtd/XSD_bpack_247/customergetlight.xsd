@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schema.post.be/ServiceController/customergetlight" elementFormDefault="qualified" targetNamespace="http://schema.post.be/ServiceController/customergetlight" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="Customer" nillable="true" type="tns:CustomerGetLight" />
+  <xs:complexType name="CustomerGetLight">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="DeliveryCode" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="PackStations" type="tns:ArrayOfBPost_CustomerPackstation" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ArrayOfBPost_CustomerPackstation">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CustomerPackStation" nillable="true" type="tns:BPost_CustomerPackstation" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="BPost_CustomerPackstation">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="CustomLabel" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="OrderNumber" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="1" name="PackstationID" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="PackstationInformation" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

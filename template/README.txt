@@ -1,0 +1,1 @@
+Place component specific freemarker templates here.

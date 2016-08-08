@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+(C) Copyright 2015 Somonar B.V.
+
+ Licensed under the Apache License, Version 2.0 (the "License");
+ you may not use this file except in compliance with the License.
+ You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+ Unless required by applicable law or agreed to in writing, software
+ distributed under the License is distributed on an "AS IS" BASIS,
+ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ See the License for the specific language governing permissions and
+ limitations under the License.
+
+ -->
+
+<site-conf xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="http://ofbiz.apache.org/dtds/site-conf.xsd">
+    <!-- The controller elements that are common to all OFBiz components
+         can be found in the following xml file. A component can override the
+         elements found in the common-controller.xml file. -->
+         
+    <include location="component://common/webcommon/WEB-INF/common-controller.xml"/>
+
+    <description>BPost Integration Component Site Configuration File</description>
+
+    <!-- Events to run on every request before security (chains exempt) -->
+    <!--
+    <preprocessor>
+    </preprocessor>
+    -->
+    <!-- Events to run on every request after all other processing (chains exempt) -->
+    <!--
+    <postprocessor>
+        <event name="test" type="java" path="org.ofbiz.webapp.event.TestEvent" invoke="test"/>
+    </postprocessor>
+    -->
+
+    <!-- Request Mappings -->
+    <request-map uri="main"><security https="true" auth="true"/><response name="success" type="view" value="main"/></request-map>
+    
+    <request-map uri="test">
+        <security https="true" auth="true"/>
+        <response name="success" type="view" value="test"/>
+    </request-map>
+    
+    <request-map uri="testBPost">
+        <security https="true" auth="true"/>
+        <event type="groovy" path="component://obpost/src/com/somonar/orrtiz/shipment/obpost/obposttest.groovy"/>
+        <response name="success" type="view" value="test"/>
+        <response name="error" type="view" value="test"/>
+    </request-map>
+    
+    <!-- Configuration -->
+    <request-map uri="configuration">
+        <security https="true" auth="true"/>
+        <response name="success" type="view" value="configuration"/>
+    </request-map>
+    <request-map uri="systemproperties">
+        <security https="true" auth="true"/>
+        <response name="success" type="view" value="systemproperties"/>
+    </request-map>
+    <request-map uri="newsystemproperty">
+        <security https="true" auth="true"/>
+        <response name="success" type="view" value="newsystemproperty"/>
+    </request-map>
+    <request-map uri="editsystemproperty">
+        <security https="true" auth="true"/>
+        <response name="success" type="view" value="editsystemproperty"/>
+    </request-map>
+    <request-map uri="createsystemproperty">
+        <security https="true" auth="true"/>
+        <event type="service" invoke="createSystemProperty"/>
+        <response name="success" type="view" value="systemproperties"/>
+    </request-map>
+    <request-map uri="updatesystemproperty">
+        <security https="true" auth="true"/>
+        <event type="service" invoke="updateSystemProperty"/>
+        <response name="success" type="view" value="systemproperties"/>
+    </request-map>
+    <request-map uri="removesystemproperty">
+        <security https="true" auth="true"/>
+        <event type="service" invoke="removeSystemProperty"/>
+        <response name="success" type="view" value="systemproperties"/>
+    </request-map>
+    
+    <!-- shipment methods -->
+    <request-map uri="shipmentmethods">
+        <security https="true" auth="true"/>
+        <response name="success" type="view" value="shipmentmethods"/>
+    </request-map>
+    <request-map uri="newshipmentmethod">
+        <security https="true" auth="true"/>
+        <response name="success" type="view" value="newshipmentmethod"/>
+    </request-map>
+    <request-map uri="createshipmentmethod">
+        <security https="true" auth="true"/>
+        <event type="service" invoke="createShipmentMethod"/>
+        <response name="success" type="view" value="shipmentmethods"/>
+    </request-map>
+    <request-map uri="removeshipmentmethod">
+        <security https="true" auth="true"/>
+        <event type="service" invoke="removeShipmentMethod"/>
+        <response name="success" type="view" value="shipmentmethods"/>
+    </request-map>
+    <request-map uri="editshipmentmethod">
+        <security https="true" auth="true"/>
+        <response name="success" type="view" value="editshipmentmethod"/>
+    </request-map>
+    <request-map uri="updateshipmentmethod">
+        <security https="true" auth="true"/>
+        <event type="service" invoke="updateShipmentMethod"/>
+        <response name="success" type="view" value="shipmentmethods"/>
+        <response name="error" type="view" value="editshipmentmethod"/>
+    </request-map>
+    
+    <request-map uri="updateShipmentMethodseq">
+        <security https="true" auth="true"/>
+        <event type="service" invoke="updateShipmentMethodseq"/>
+        <response name="success" type="view" value="shipmentmethods"/>
+        <response name="error" type="view" value="shipmentmethods"/>
+    </request-map>
+    
+    <!-- shipment methods -->
+    <request-map uri="shipmentmethodtypes">
+        <security https="true" auth="true"/>
+        <response name="success" type="view" value="shipmentmethodtypes"/>
+    </request-map>
+    <request-map uri="newshipmentmethodtype">
+        <security https="true" auth="true"/>
+        <response name="success" type="view" value="newshipmentmethodtype"/>
+    </request-map>
+    <request-map uri="createshipmentmethodtype">
+        <security https="true" auth="true"/>
+        <event type="service" invoke="createShipmentMethodtype"/>
+        <response name="success" type="view" value="shipmentmethodtypes"/>
+    </request-map>
+    <request-map uri="removeshipmentmethodtype">
+        <security https="true" auth="true"/>
+        <event type="service" invoke="removeShipmentMethodType"/>
+        <response name="success" type="view" value="shipmentmethodtypes"/>
+    </request-map>
+    <request-map uri="editshipmentmethodtype">
+        <security https="true" auth="true"/>
+        <response name="success" type="view" value="editshipmentmethodtype"/>
+    </request-map>
+    <request-map uri="updateshipmentmethodtype">
+        <security https="true" auth="true"/>
+        <event type="service" invoke="updateShipmentMethodType"/>
+        <response name="success" type="view" value="shipmentmethodtypes"/>
+        <response name="error" type="view" value="editshipmentmethodtype"/>
+    </request-map>
+    
+    <!-- shipment boxes -->
+    <request-map uri="shipmentboxes">
+        <security https="true" auth="true"/>
+        <response name="success" type="view" value="shipmentboxes"/>
+    </request-map>
+    <request-map uri="newshipmentbox">
+        <security https="true" auth="true"/>
+        <response name="success" type="view" value="newshipmentbox"/>
+    </request-map>
+    <request-map uri="createshipmentbox">
+        <security https="true" auth="true"/>
+        <event type="service" invoke="createShipmentBox"/>
+        <response name="success" type="view" value="shipmentboxes"/>
+    </request-map>
+    <request-map uri="removeshipmentbox">
+        <security https="true" auth="true"/>
+        <event type="service" invoke="removeShipmentBox"/>
+        <response name="success" type="view" value="shipmentboxes"/>
+    </request-map>
+    <request-map uri="editshipmentbox">
+        <security https="true" auth="true"/>
+        <response name="success" type="view" value="editshipmentbox"/>
+    </request-map>
+    <request-map uri="updateshipmentbox">
+        <security https="true" auth="true"/>
+        <event type="service" invoke="updateShipmentBox"/>
+        <response name="success" type="view" value="shipmentboxes"/>
+        <response name="error" type="view" value="editshipmentbox"/>
+    </request-map>
+    
+    <!-- box types -->
+    <request-map uri="boxtypes">
+        <security https="true" auth="true"/>
+        <response name="success" type="view" value="boxtypes"/>
+    </request-map>
+    <request-map uri="newboxtype">
+        <security https="true" auth="true"/>
+        <response name="success" type="view" value="newboxtype"/>
+    </request-map>
+    <request-map uri="createboxtype">
+        <security https="true" auth="true"/>
+        <event type="service" invoke="createBoxType"/>
+        <response name="success" type="view" value="boxtypes"/>
+    </request-map>
+    <request-map uri="removeboxtype">
+        <security https="true" auth="true"/>
+        <event type="service" invoke="removeBoxType"/>
+        <response name="success" type="view" value="boxtypes"/>
+    </request-map>
+    <request-map uri="editboxtype">
+        <security https="true" auth="true"/>
+        <response name="success" type="view" value="editboxtype"/>
+    </request-map>
+    <request-map uri="updateboxtype">
+        <security https="true" auth="true"/>
+        <event type="service" invoke="updateBoxType"/>
+        <response name="success" type="view" value="boxtypes"/>
+        <response name="error" type="view" value="editshipmentbox"/>
+    </request-map>
+    
+    <!-- Carrier requests -->
+    <request-map uri="confirm">
+        <security https="true" auth="true"/>
+        <event type="service" path="" invoke="bpostShipmentConfirm"/>
+        <response name="success" type="cross-redirect" value="facility/control/EditShipmentRouteSegments"><redirect-parameter name="shipmentId"/></response>
+        <response name="error" type="cross-redirect" value="facility/control/EditShipmentRouteSegments"><redirect-parameter name="shipmentId"/></response>
+    </request-map>
+    
+    <!-- View Mappings -->
+    <view-map name="main" type="screen" page="component://obpost/widget/obpost-Screens.xml#main"/>
+    
+    <!-- Configuration -->
+    <view-map name="configuration" type="screen" page="component://obpost/widget/ConfigurationScreens.xml#Configuration"/>
+    <view-map name="systemproperties" type="screen" page="component://obpost/widget/ConfigurationScreens.xml#SystemProperties"/>
+    <view-map name="newsystemproperty" type="screen" page="component://obpost/widget/ConfigurationScreens.xml#NewSystemProperty"/>
+    <view-map name="editsystemproperty" type="screen" page="component://obpost/widget/ConfigurationScreens.xml#EditSystemProperty"/>
+    
+    <!-- shipment methods -->
+    <view-map name="shipmentmethods" page="component://obpost/widget/ConfigurationScreens.xml#ShipmentMethods" type="screen"/>
+    <view-map name="newshipmentmethod" page="component://obpost/widget/ConfigurationScreens.xml#NewShipmentMethod" type="screen"/>
+    <view-map name="editshipmentmethod" page="component://obpost/widget/ConfigurationScreens.xml#EditShipmentMethod" type="screen"/>
+    
+    <!-- shipment method typess -->
+    <view-map name="shipmentmethodtypes" page="component://obpost/widget/ConfigurationScreens.xml#ShipmentMethodTypes" type="screen"/>
+    <view-map name="newshipmentmethodtype" page="component://obpost/widget/ConfigurationScreens.xml#NewShipmentMethodType" type="screen"/>
+    <view-map name="editshipmentmethodtype" page="component://obpost/widget/ConfigurationScreens.xml#EditShipmentMethodType" type="screen"/>
+    
+    <!-- shipment boxes -->
+    <view-map name="shipmentboxes" page="component://obpost/widget/ConfigurationScreens.xml#ShipmentBoxes" type="screen"/>
+    <view-map name="newshipmentbox" page="component://obpost/widget/ConfigurationScreens.xml#NewShipmentBox" type="screen"/>
+    <view-map name="editshipmentbox" page="component://obpost/widget/ConfigurationScreens.xml#EditShipmentBox" type="screen"/>
+    
+    <!-- box types -->
+    <view-map name="boxtypes" page="component://obpost/widget/ConfigurationScreens.xml#BoxTypes" type="screen"/>
+    <view-map name="newboxtype" page="component://obpost/widget/ConfigurationScreens.xml#NewBoxType" type="screen"/>
+    <view-map name="editboxtype" page="component://obpost/widget/ConfigurationScreens.xml#EditBoxType" type="screen"/>
+    
+</site-conf>

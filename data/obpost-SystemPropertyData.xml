@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+(C) Copyright 2015 Somonar B.V.
+
+ Licensed under the Apache License, Version 2.0 (the "License");
+ you may not use this file except in compliance with the License.
+ You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+ Unless required by applicable law or agreed to in writing, software
+ distributed under the License is distributed on an "AS IS" BASIS,
+ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ See the License for the specific language governing permissions and
+ limitations under the License.
+
+ -->
+
+<entity-engine-xml>
+    
+    <SystemProperty
+    systemPropertyId="carrierPartyId" 
+    systemPropertyValue="bpost" 
+    description="obpost associated carrier (partyId)" 
+    systemResourceId="obpost"
+    />
+    
+    <SystemProperty
+    systemPropertyId="HostName" 
+    systemPropertyValue="shippingmanager.bpost.be" 
+    description="BPost API HostName" 
+    systemResourceId="obpost"
+    />
+    
+    <SystemProperty
+    systemPropertyId="HostPort" 
+    systemPropertyValue="443" 
+    description="BPost API HostPort" 
+    systemResourceId="obpost"
+    />
+    
+    <SystemProperty
+    systemPropertyId="HostProtocol" 
+    systemPropertyValue="https" 
+    description="BPost API HostProtocol" 
+    systemResourceId="obpost"
+    />
+    
+    <SystemProperty
+    systemPropertyId="apiRequest" 
+    systemPropertyValue="/ShmFrontEnd/start" 
+    description="BPost API Request" 
+    systemResourceId="obpost"
+    />
+    
+    <SystemProperty
+    systemPropertyId="accountId" 
+    systemPropertyValue="123456" 
+    description="BPost API Account Id" 
+    systemResourceId="obpost"
+    />
+    
+    <SystemProperty
+    systemPropertyId="phassPhrase" 
+    systemPropertyValue="myPassPhrase"
+    description="BPost API Account Id" 
+    systemResourceId="obpost" 
+    />
+    
+    <SystemProperty
+    systemPropertyId="defaultCancelUrl" 
+    systemPropertyValue="obpost-cancel" 
+    description="BPost default cancel url" 
+    systemResourceId="obpost"
+    />
+    
+    <SystemProperty
+    systemPropertyId="defaultConfirmUrl" 
+    systemPropertyValue="obpost-confirm" 
+    description="BPost default confirm url" 
+    systemResourceId="obpost"
+    />
+    
+    <SystemProperty
+    systemPropertyId="defaultErrorUrl" 
+    systemPropertyValue="obpost-error" 
+    description="BPost default error url" 
+    systemResourceId="obpost"
+    />
+    
+    <SystemProperty
+    systemPropertyId="action" 
+    systemPropertyValue="START" 
+    description="BPost actions: START opens the redirect page, CONFIRM confirms the order" 
+    systemResourceId="obpost"
+    />
+    
+    <SystemProperty
+    systemPropertyId="partyId" 
+    systemPropertyValue="bpost" 
+    description="obpost associated carrier (partyId)" 
+    systemResourceId="obpost"
+    />
+    
+    <SystemProperty
+    systemPropertyId="confirmService.name" 
+    systemPropertyValue="confirmBPostShipment" 
+    description="Name of the carrier specific confirm service." 
+    systemResourceId="obpost"
+    />
+    
+    <SystemProperty
+    systemPropertyId="confirmService.enabled" 
+    systemPropertyValue="False" 
+    description="Indicator whether the OFBiz confirmService is enabled. Options: False, True. Default value: False"
+    systemResourceId="obpost"
+    />
+    
+    <SystemProperty
+    systemPropertyId="estimateRateService.name" 
+    systemPropertyValue="estimateBPostRate" 
+    description="Name of the carrier specific rate estimation service." 
+    systemResourceId="obpost"
+    />
+    
+    <SystemProperty
+    systemPropertyId="estimateRateService.enabled" 
+    systemPropertyValue="False" 
+    description="Indicator whether the OFBiz estimateRateService is enabled. Options: False, True. Default value: False"
+    systemResourceId="obpost"
+    />
+    
+</entity-engine-xml>
